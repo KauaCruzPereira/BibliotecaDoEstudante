@@ -10,7 +10,7 @@ const ALL_DISCIPLINES = [
   ...Array.from(new Set(BOOKS.flatMap((b) => b.disciplines))).sort(),
 ];
 
-async function askGroq(messages) {
+async function askGroq(messages, activePdfTitle) {
   const res = await fetch("/api/chat", {
     method: "POST",
     headers: {
@@ -18,6 +18,7 @@ async function askGroq(messages) {
     },
     body: JSON.stringify({
       model: "llama-3.3-70b-versatile",
+      activePdfTitle,
       messages,
     }),
   });
@@ -366,7 +367,7 @@ function AIChat({ activePdfTitle }) {
     setInput("");
     setLoading(true);
     try {
-      const reply = await askGroq(next);
+      const reply = await askGroq(next, activePdfTitle);
       setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch {
       setMessages((m) => [
