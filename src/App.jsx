@@ -17,11 +17,11 @@ async function askGroq(messages) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "llama3-8b-8192",
+      model: "llama-3.3-70b-versatile",
       messages,
     }),
   });
-  
+
   const data = await res.json();
   if (!res.ok) throw new Error(`Groq error: ${res.status}`);
   return data.choices[0].message.content;
