@@ -10,32 +10,20 @@ const ALL_DISCIPLINES = [
   ...Array.from(new Set(BOOKS.flatMap((b) => b.disciplines))).sort(),
 ];
 
-// ─── Groq ─────────────────────────────────────────────────────────────────────
-const GROQ_API_KEY = "YOUR_GROQ_API_KEY_HERE";
-
 async function askGroq(messages) {
-  const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+  const res = await fetch("/api/chat", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${GROQ_API_KEY}`,
     },
     body: JSON.stringify({
       model: "llama3-8b-8192",
-      messages: [
-        {
-          role: "system",
-          content:
-            "Você é um assistente educacional especializado em ajudar estudantes do Ensino Médio brasileiro com dúvidas sobre suas matérias escolares. Responda sempre em português, de forma clara, didática e encorajadora.",
-        },
-        ...messages,
-      ],
-      temperature: 0.7,
-      max_tokens: 1024,
+      messages,
     }),
   });
-  if (!res.ok) throw new Error(`Groq error: ${res.status}`);
+  
   const data = await res.json();
+  if (!res.ok) throw new Error(`Groq error: ${res.status}`);
   return data.choices[0].message.content;
 }
 
