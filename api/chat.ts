@@ -5,7 +5,7 @@ export default async function handler(req: any, res: any) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${import.meta.env.VITE_GROQ_API_KEY}`,
+        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
       },
       body: JSON.stringify(req.body),
     },
@@ -13,5 +13,5 @@ export default async function handler(req: any, res: any) {
 
   const data = await response.json();
 
-  res.status(200).json(data);
+  res.status(response.status).json(data);
 }
