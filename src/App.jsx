@@ -1,6 +1,7 @@
 import { BookIcon, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { BOOKS } from "./utils/books";
+import favicon from "../public/favicon.png";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -728,7 +729,7 @@ export default function App() {
             gap: 10,
           }}
         >
-          <img src="src/assets/svg/favicon-32x32.png" alt="Favicon" />
+          <img src={favicon} alt="Favicon" />
           <span
             style={{
               color: "#fff",
