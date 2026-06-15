@@ -5,11 +5,6 @@ import favicon from "../public/favicon.png";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
-const ALL_DISCIPLINES = [
-  "Todas",
-  ...Array.from(new Set(BOOKS.flatMap((b) => b.disciplines))).sort(),
-];
-
 async function askGroq(messages, activePdfTitle) {
   const res = await fetch("/api/chat", {
     method: "POST",
@@ -236,6 +231,12 @@ function PdfModal({ book, onClose }) {
     return () => window.removeEventListener("keydown", fn);
   }, [onClose]);
 
+  const [pdfLoading, setPdfLoading] = useState(true);
+  useEffect(() => {
+    // reset loading state when a new book is opened
+    setPdfLoading(true);
+  }, [book]);
+
   return (
     <div
       style={{
@@ -307,17 +308,37 @@ function PdfModal({ book, onClose }) {
         </div>
       </div>
       {/* PDF */}
-      <div style={{ flex: 1, overflow: "hidden" }}>
-        <iframe
+      <div style={{ flex: 1, overflow: "hidden", position: "relative" }}>
+        {pdfLoading && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "#F1F5F9",
+              zIndex: 10,
+            }}
+          >
+            <div className="spinner" />
+            <p style={{ margin: 8, fontSize: 14, color: "#0F172A" }}>
+              Abrindo PDF…
+            </p>
+          </div>
+        )}
+         <iframe
           src={`${book.pdfUrl}#toolbar=1&navpanes=0`}
           title={book.title}
+          onLoad={() => setPdfLoading(false)}
           style={{
             width: "100%",
             height: "100%",
             border: "none",
             display: "block",
           }}
-        />
+        /> 
       </div>
     </div>
   );
@@ -676,8 +697,19 @@ export default function App() {
   const [activeDiscipline, setActiveDiscipline] = useState("Todas");
   const [search, setSearch] = useState("");
   const [openBook, setOpenBook] = useState(null);
+  const [books, setBooks] = useState([]);
+  const [loadingBooks, setLoadingBooks] = useState(true);
 
-  const filteredBooks = BOOKS.filter((b) => {
+  useEffect(() => {
+    // simulate async loading (swap with real fetch if needed)
+    const t = setTimeout(() => {
+      setBooks(BOOKS);
+      setLoadingBooks(false);
+    }, 500);
+    return () => clearTimeout(t);
+  }, []);
+
+  const filteredBooks = books.filter((b) => {
     const matchesDiscipline =
       activeDiscipline === "Todas" || b.disciplines.includes(activeDiscipline);
     const q = search.toLowerCase();
@@ -688,6 +720,11 @@ export default function App() {
       b.disciplines.some((d) => d.toLowerCase().includes(q));
     return matchesDiscipline && matchesSearch;
   });
+
+  const ALL_DISCIPLINES = [
+    "Todas",
+    ...Array.from(new Set(books.flatMap((b) => b.disciplines))).sort(),
+  ];
 
   return (
     <div
@@ -824,8 +861,34 @@ export default function App() {
           {activeDiscipline !== "Todas" && ` em "${activeDiscipline}"`}
         </p>
 
-        {/* Grid */}
-        {filteredBooks.length > 0 ? (
+        {/* Loading / Grid / Empty */}
+        {loadingBooks ? (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "96px 0",
+              gap: 12,
+            }}
+          >
+            <div className="spinner" />
+            <p
+              style={{
+                margin: 0,
+                fontSize: 17,
+                fontWeight: 600,
+                color: "#0F172A",
+              }}
+            >
+              Carregando livros…
+            </p>
+            <p style={{ margin: 0, fontSize: 14, color: "#64748B" }}>
+              Aguarde um instante.
+            </p>
+          </div>
+        ) : filteredBooks.length > 0 ? (
           <div
             style={{
               display: "grid",
