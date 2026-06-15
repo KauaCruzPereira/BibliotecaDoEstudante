@@ -3,7 +3,7 @@ export const BOOKS = [
     title: "Identidade Saraiva: Língua Portuguesa (Vol. 1)",
     authors:
       "Carolina Dias Vianna, Christiane Damien Codenhoto, William Cereja",
-    disciplines: ["Língua Portuguesa", ],
+    disciplines: ["Língua Portuguesa"],
     pdfUrl:
       "https://content.edocente.com.br/files/IDENTIDADE_SARAIVA_PNLD26_PORTUGUES_VOL1_MP.pdf",
     imageUrl:
@@ -13,7 +13,7 @@ export const BOOKS = [
     title: "Identidade Saraiva: Língua Portuguesa (Vol. 2)",
     authors:
       "Carolina Dias Vianna, Christiane Damien Codenhoto, William Cereja",
-    disciplines: ["Língua Portuguesa", ],
+    disciplines: ["Língua Portuguesa"],
     pdfUrl:
       "https://content.edocente.com.br/files/IDENTIDADE_SARAIVA_PNLD26_PORTUGUES_VOL2_MP.pdf",
     imageUrl:
@@ -23,7 +23,7 @@ export const BOOKS = [
     title: "Identidade Saraiva: Língua Portuguesa (Vol. 3)",
     authors:
       "Carolina Dias Vianna, Christiane Damien Codenhoto, William Cereja",
-    disciplines: ["Língua Portuguesa", ],
+    disciplines: ["Língua Portuguesa"],
     pdfUrl:
       "https://content.edocente.com.br/files/IDENTIDADE_SARAIVA_PNLD26_PORTUGUES_VOL3_MP.pdf",
     imageUrl:
@@ -43,7 +43,7 @@ export const BOOKS = [
     title: "Identidade Saraiva: Arte",
     authors:
       "André Vilela, Eliana Pougy, George Lucas Nercessian, João Reynaldo Pires Junior",
-    disciplines: ["Arte", ],
+    disciplines: ["Arte"],
     pdfUrl:
       "https://content.edocente.com.br/files/aa0ab497-9852-42be-a3c0-4ee3b70d2791/IDENTIDADE_SARAIVA_PNLD26_ARTE_VU_MP_lin.pdf",
     imageUrl:
@@ -53,8 +53,9 @@ export const BOOKS = [
     title: "Do Seu Jeito: Língua Portuguesa (Vol. 1)",
     authors:
       "Carlos Emílio Faraco, Francisco Marto de Moura, José Hamilton Maruxo Junior, Juliana Vegas Chinaglia, Silvia de Andrade",
-    disciplines: ["Língua Portuguesa", ],
-      url: "https://content.edocente.com.br/files/DOSEUJEITO_PNLD26_LP_VOL1_MP.pdf",
+    disciplines: ["Língua Portuguesa"],
+    pdfUrl:
+      "https://content.edocente.com.br/files/DOSEUJEITO_PNLD26_LP_VOL1_MP.pdf",
     imageUrl:
       "https://www.edocente.com.br/wp-content/uploads/2025/04/Capa-Do-seu-Jeito-Lingua-Portuguesa-Volume-1.webp",
   },
@@ -62,7 +63,7 @@ export const BOOKS = [
     title: "Do Seu Jeito: Língua Portuguesa (Vol. 2)",
     authors:
       "Carlos Emílio Faraco, Francisco Marto de Moura, José Hamilton Maruxo Junior, Juliana Vegas Chinaglia, Silvia de Andrade",
-    disciplines: ["Língua Portuguesa", ],
+    disciplines: ["Língua Portuguesa"],
     pdfUrl:
       "https://content.edocente.com.br/files/DOSEUJEITO_PNLD26_LP_VOL2_MP.pdf",
     imageUrl:
@@ -72,7 +73,7 @@ export const BOOKS = [
     title: "Do Seu Jeito: Língua Portuguesa (Vol. 3)",
     authors:
       "Carlos Emílio Faraco, José Hamilton Maruxo Junior, Juliana Vegas Chinaglia, Silvia de Andrade",
-    disciplines: ["Língua Portuguesa", ],
+    disciplines: ["Língua Portuguesa"],
     pdfUrl:
       "https://content.edocente.com.br/files/DOSEUJEITO_PNLD26_LP_VOL3_MP.pdf",
     imageUrl:
@@ -92,7 +93,7 @@ export const BOOKS = [
     title: "Do Seu Jeito: Arte",
     authors:
       "Celso Melo Filho, Gerson Rodrigues, Simone Lima, Valeska Figueiredo",
-    disciplines: ["Arte", ],
+    disciplines: ["Arte"],
     pdfUrl:
       "https://content.edocente.com.br/files/05752837-7516-438a-88b3-edc292a73005/DOSEUJEITO_PNLD26_ARTE_VU_MP_lin.pdf",
     imageUrl:
@@ -157,14 +158,14 @@ export const BOOKS = [
     disciplines: ["Matemática"],
 
     pdfUrl:
-      "https://content.edocente.com.br/files/887999_DOSEUJEITO_Mat_VOL3_PNLD2026_MP_DIV.pdf",
+      "https://content.edocente.com.br/files/888015_DOSEUJEITO_Mat_VOL3_PNLD2026_MP_DIV.pdf",
     imageUrl:
       "https://www.edocente.com.br/wp-content/uploads/2025/04/Capa-Do-seu-Jeito-Matematica-Volume-3-1.webp",
   },
   {
     title: "Identidade Saraiva: Biologia",
     authors: "Fernando Gewandsznajder, Helena Pacca",
-    disciplines: ["Biologia", ],
+    disciplines: ["Biologia"],
     pdfUrl:
       "https://content.edocente.com.br/files/888015_DOSEUJEITO_Mat_VOL3_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -191,7 +192,7 @@ export const BOOKS = [
   {
     title: "Do Seu Jeito: Biologia",
     authors: "Lauro Tozetto Neto, Luciane Lazzarini, Vilmarise Bobato",
-    disciplines: ["Biologia", ],
+    disciplines: ["Biologia"],
     pdfUrl:
       "https://content.edocente.com.br/files/888280_DOSEUJEITO_Biologia_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -218,7 +219,7 @@ export const BOOKS = [
   {
     title: "Ciência Viva: Biologia",
     authors: "Danusa Munford, Luiz Franco, Santer Matos",
-    disciplines: ["Biologia", ],
+    disciplines: ["Biologia"],
     pdfUrl:
       "https://content.edocente.com.br/files/888071_Ciencia%20Viva_Biologia_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -283,7 +284,7 @@ export const BOOKS = [
     title: "Identidade Saraiva: Síntesis (Língua Espanhola)",
     authors:
       "Ana Luiza Vianna Valente do Couto, Ivan Rodrigues Martin, Wagner de Souza Santos",
-    disciplines: ["Língua Espanhola", ],
+    disciplines: ["Língua Espanhola"],
     pdfUrl:
       "https://content.edocente.com.br/files/00f1ac55-32f2-4e93-94e4-98f5ae8104fd/ESPANHOL_SINTESIS_PNLD26_VU_LP_lin.pdf",
     imageUrl:
@@ -293,7 +294,7 @@ export const BOOKS = [
     title: "Identidade Saraiva: Educação Física",
     authors:
       "André Vilela, Eliana Pougy, Jacqueline Cristina Jesus Martins, Maria Emilia de Lima",
-    disciplines: ["Educação Física", ],
+    disciplines: ["Educação Física"],
     pdfUrl:
       "https://content.edocente.com.br/files/IDENTIDADE_SARAIVA_PNLD26_EM_ED_FISICA_VU_MP.pdf",
     imageUrl:
