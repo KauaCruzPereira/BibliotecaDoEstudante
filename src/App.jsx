@@ -1,6 +1,7 @@
 import { BookIcon, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { BOOKS } from "./utils/books";
+import { CHANNELS } from "./utils/channels";
 import favicon from "../public/favicon.png";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
@@ -232,10 +233,8 @@ function PdfModal({ book, onClose }) {
   }, [onClose]);
 
   const [pdfLoading, setPdfLoading] = useState(true);
-  useEffect(() => {
-    // reset loading state when a new book is opened
-    setPdfLoading(true);
-  }, [book]);
+  // when the modal mounts its `pdfLoading` state starts as `true`
+  // we avoid calling setState inside an effect to silence the linter
 
   return (
     <div
@@ -328,7 +327,7 @@ function PdfModal({ book, onClose }) {
             </p>
           </div>
         )}
-         <iframe
+        <iframe
           src={`${book.pdfUrl}#toolbar=1&navpanes=0`}
           title={book.title}
           onLoad={() => setPdfLoading(false)}
@@ -338,7 +337,7 @@ function PdfModal({ book, onClose }) {
             border: "none",
             display: "block",
           }}
-        /> 
+        />
       </div>
     </div>
   );
@@ -726,6 +725,67 @@ export default function App() {
     ...Array.from(new Set(books.flatMap((b) => b.disciplines))).sort(),
   ];
 
+  function mapDisciplineToSubjectKey(d) {
+    if (!d) return null;
+    const normalize = (str) =>
+      String(str)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+
+    const nd = normalize(d);
+    const channelSubjects = Array.from(
+      new Set(CHANNELS.map((c) => normalize(c.subject))),
+    );
+
+    const found = channelSubjects.find((cs) => nd === cs || nd.includes(cs));
+    if (found) return found;
+
+    // fallback heuristics
+    if (nd.includes("port")) return "portugues";
+    if (nd.includes("espan")) return "espanhol";
+    if (nd.includes("redac")) return "redacao";
+    if (nd.includes("educ") && nd.includes("fis")) return "educacao fisica";
+    if (nd.includes("fisic") || nd.includes("fisica")) return "fisica";
+    if (nd.includes("mat")) return "matematica";
+    if (nd.includes("bio")) return "biologia";
+    if (nd.includes("quim")) return "quimica";
+    if (nd.includes("hist")) return "historia";
+    if (nd.includes("geog") || nd.includes("geografia")) return "geografia";
+    if (nd.includes("filos")) return "filosofia";
+    if (nd.includes("soci")) return "sociologia";
+    if (nd.includes("arte")) return "artes";
+    if (nd.includes("ingles")) return "ingles";
+
+    return nd;
+  }
+
+  let activeSubjectKey = null;
+  if (activeDiscipline !== "Todas") {
+    activeSubjectKey = mapDisciplineToSubjectKey(activeDiscipline);
+  } else if (search.trim() !== "") {
+    // try to match a discipline by search text
+    const q = search.toLowerCase();
+    const matched = ALL_DISCIPLINES.find((d) => d.toLowerCase().includes(q));
+    if (matched && matched !== "Todas")
+      activeSubjectKey = mapDisciplineToSubjectKey(matched);
+    else if (filteredBooks.length > 0)
+      activeSubjectKey = mapDisciplineToSubjectKey(
+        filteredBooks[0].disciplines[0],
+      );
+  }
+  const normalize = (str) =>
+    String(str)
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  const subjectChannels = activeSubjectKey
+    ? CHANNELS.filter((c) => normalize(c.subject) === activeSubjectKey).slice(
+        0,
+        2,
+      )
+    : [];
+
   return (
     <div
       style={{
@@ -852,6 +912,77 @@ export default function App() {
           </div>
         </div>
 
+        {/* Channels (show when searching or a filter is active) */}
+        {(search.trim() !== "" || activeDiscipline !== "Todas") &&
+          subjectChannels.length > 0 && (
+            <div
+              style={{
+                display: "flex",
+                gap: 12,
+                marginBottom: 16,
+                flexDirection: "column",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <p
+                  style={{
+                    margin: 0,
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: "#0F172A",
+                  }}
+                >
+                  Canais relacionados a:{" "}
+                  {activeDiscipline !== "Todas"
+                    ? activeDiscipline
+                    : (filteredBooks[0]?.disciplines[0] ?? "")}
+                </p>
+                <p style={{ margin: 0, fontSize: 12, color: "#64748B" }}>
+                  Assista a estes vídeos para complementar seus estudos.
+                </p>
+              </div>
+              <div className="channels-list">
+                {subjectChannels.map((c) => (
+                  <a
+                    key={c.youtubeUrl}
+                    href={c.youtubeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="channel-item"
+                  >
+                    <div style={{ display: "flex", gap: 8 }}>
+                      <img
+                        src={c.imageUrl}
+                        alt="yt"
+                        style={{ width: 40, height: 40, borderRadius: 50 }}
+                      />
+                      <div style={{ flexDirection: "column", display: "flex" }}>
+                        <span style={{ fontSize: 13, fontWeight: 600 }}>
+                          {c.name}
+                        </span>
+                        <span
+                          style={{
+                            fontSize: 13,
+                            fontWeight: 600,
+                            color: "grey",
+                          }}
+                        >
+                          {c.subscriptions} de inscritos
+                        </span>
+                      </div>
+                    </div>
+                    <img
+                      src="https://cdn.creazilla.com/icons/3245994/youtube-icon-lg.png"
+                      alt="youtubeLogo"
+                      height={20}
+                      width={35}
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
         {/* Count */}
         <p style={{ margin: "0 0 20px", fontSize: 13, color: "#64748B" }}>
           {filteredBooks.length}{" "}
@@ -949,7 +1080,11 @@ export default function App() {
       </main>
 
       {openBook && (
-        <PdfModal book={openBook} onClose={() => setOpenBook(null)} />
+        <PdfModal
+          key={openBook?.pdfUrl}
+          book={openBook}
+          onClose={() => setOpenBook(null)}
+        />
       )}
       <AIChat activePdfTitle={openBook?.title} />
     </div>

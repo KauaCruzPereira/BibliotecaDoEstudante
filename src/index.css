@@ -51,3 +51,39 @@ textarea {
     transform: rotate(360deg);
   }
 }
+
+.channels-list {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #0f172a;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    border-color 150ms ease;
+    justify-content: space-between;
+}
+
+.channel-item:hover,
+.channel-item:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+  border-color: #cbd5e1;
+}
+
+/* Make channels stack in a single column on narrow viewports */
+@media (max-width: 600px) {
+  .channels-list {
+    grid-template-columns: 1fr;
+  }
+}
