@@ -2,7 +2,6 @@ import { BookIcon, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { BOOKS } from "./utils/books";
 import { CHANNELS } from "./utils/channels";
-import favicon from "../public/favicon.png";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -691,6 +690,69 @@ function AIChat({ activePdfTitle }) {
   );
 }
 
+const NAV_URLS = {
+  biblioteca: "https://biblioteca-do-estudante.vercel.app/",
+  solverequacoes: "https://solver-equacoes.vercel.app/",
+  calculadoracarbono: "https://calculadora-carbono-cedup.vercel.app/",
+};
+
+export function NavigationHeader() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const currentUrl = window.location.href;
+
+  const active = currentUrl.includes("biblioteca-do-estudante")
+    ? "biblioteca"
+    : currentUrl.includes("solver-equacoes")
+      ? "solverequacoes"
+      : "calculadoracarbono";
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const isMobile = windowWidth < 768;
+
+  const navItems = [
+    { id: "biblioteca", label: "Biblioteca" },
+    { id: "solverequacoes", label: "SolverEquações" },
+    { id: "calculadoracarbono", label: "CalculadoraCarbono" },
+  ];
+
+  return (
+    <div className="nav-header">
+      <div className={`nav-buttons-container ${isMobile ? "mobile" : ""}`}>
+        {navItems.map(({ id, label }) => {
+          const displayLabel = isMobile
+            ? label.replace(/([A-Z])/g, "\n$1")
+            : label;
+
+          return (
+            <button
+              key={id}
+              className={`nav-button ${active === id ? "active" : ""}`}
+              onClick={() => (window.location.href = NAV_URLS[id])}
+            >
+              <span
+                className={`nav-button-text ${active === id ? "active" : ""}`}
+              >
+                {displayLabel}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ─── App ──────────────────────────────────────────────────────────────────────
 export default function App() {
   const [activeDiscipline, setActiveDiscipline] = useState("Todas");
@@ -795,39 +857,7 @@ export default function App() {
       }}
     >
       {/* Navbar */}
-      <header
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 30,
-          background: "#501C2F",
-          borderBottom: "1px solid #43617A",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1280,
-            margin: "0 auto",
-            padding: "0 24px",
-            height: 56,
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-          }}
-        >
-          <img src={favicon} alt="Favicon" />
-          <span
-            style={{
-              color: "#fff",
-              fontWeight: 700,
-              fontSize: 18,
-              letterSpacing: "-0.3px",
-            }}
-          >
-            Biblioteca Do Estudante
-          </span>
-        </div>
-      </header>
+      <NavigationHeader />
 
       <main style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}>
         {/* Search */}
