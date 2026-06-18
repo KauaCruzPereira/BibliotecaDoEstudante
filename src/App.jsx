@@ -672,7 +672,7 @@ function AIChat({ activePdfTitle }) {
               width: 36,
               height: 36,
               borderRadius: 12,
-              background: "#334E68",
+              background: "#501C2F",
               border: "none",
               cursor: input.trim() && !loading ? "pointer" : "not-allowed",
               opacity: input.trim() && !loading ? 1 : 0.4,
