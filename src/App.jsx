@@ -800,7 +800,7 @@ export default function App() {
           position: "sticky",
           top: 0,
           zIndex: 30,
-          background: "#334E68",
+          background: "#501C2F",
           borderBottom: "1px solid #43617A",
         }}
       >
