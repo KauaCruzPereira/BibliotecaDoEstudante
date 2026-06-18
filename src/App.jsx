@@ -790,7 +790,7 @@ export default function App() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#F1F5F9",
+        background: "#F2E8DE",
         fontFamily: "Inter, system-ui, sans-serif",
       }}
     >
