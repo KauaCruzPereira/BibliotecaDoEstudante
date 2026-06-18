@@ -425,7 +425,7 @@ function AIChat({ activePdfTitle }) {
           fontWeight: 600,
           fontSize: 14,
 
-          background: "#334E68",
+          background: "#501C2F",
           color: "#fff",
 
           border: "none",
@@ -894,7 +894,7 @@ export default function App() {
                     fontFamily: "inherit",
                     ...(active
                       ? {
-                          background: "#334E68",
+                          background: "#501C2F",
                           color: "#fff",
                           border: "1px solid #334E68",
                         }
