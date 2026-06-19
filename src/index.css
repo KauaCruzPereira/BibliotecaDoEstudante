@@ -39,7 +39,7 @@ textarea {
   height: 48px;
   border-radius: 50%;
   border: 4px solid rgba(51, 78, 104, 0.12);
-  border-top-color: #334e68;
+  border-top-color: #501c2fbb;
   animation: spin 1s linear infinite;
 }
 

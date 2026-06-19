@@ -49,7 +49,7 @@ function SendIcon({ size = 16 }) {
       height={size}
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke="white"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -207,9 +207,9 @@ function BookCard({ book, onOpen }) {
                 padding: "2px 8px",
                 borderRadius: 999,
                 fontWeight: 500,
-                background: "#F1F5F9",
-                color: "#334E68",
-                border: "1px solid #CBD5E1",
+                background: "#501c2f1f",
+                color: "#501c2fb7",
+                border: "1px solid #501c2fb4",
               }}
             >
               {d}
@@ -253,8 +253,8 @@ function PdfModal({ book, onClose }) {
           alignItems: "center",
           gap: 12,
           padding: "10px 16px",
-          background: "#334E68",
-          borderBottom: "1px solid #43617A",
+          background: "#501C2F",
+          borderBottom: "1px solid #501C2F",
           flexShrink: 0,
         }}
       >
@@ -316,7 +316,7 @@ function PdfModal({ book, onClose }) {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              background: "#F1F5F9",
+              background: "linear-gradient(180deg, #F7F1EB, #EFE5DC, #E6D8CC)",
               zIndex: 10,
             }}
           >
@@ -512,7 +512,7 @@ function AIChat({ activePdfTitle }) {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "12px 16px",
-            background: "#334E68",
+            background: "#501C2F",
             flexShrink: 0,
           }}
         >
@@ -571,7 +571,7 @@ function AIChat({ activePdfTitle }) {
             display: "flex",
             flexDirection: "column",
             gap: 10,
-            background: "#F8FAFC",
+            background: "linear-gradient(180deg, #F7F1EB, #EFE5DC, #E6D8CC)",
           }}
         >
           {messages.map((m, i) => (
@@ -591,7 +591,7 @@ function AIChat({ activePdfTitle }) {
                   borderRadius: 16,
                   ...(m.role === "user"
                     ? {
-                        background: "#334E68",
+                        background: "#501C2F",
                         color: "#fff",
                         borderBottomRightRadius: 4,
                       }
@@ -616,7 +616,7 @@ function AIChat({ activePdfTitle }) {
                   background: "#fff",
                   border: "1px solid #E2E8F0",
                   fontSize: 13,
-                  color: "#64748B",
+                  color: "#501C2F",
                 }}
               >
                 Digitando…
@@ -682,7 +682,7 @@ function AIChat({ activePdfTitle }) {
               alignSelf: "flex-end",
             }}
           >
-            <SendIcon size={16} color="#fff" />
+            <SendIcon size={16} color="#ffffff" />
           </button>
         </div>
       </div>
@@ -852,7 +852,7 @@ export default function App() {
     <div
       style={{
         minHeight: "100vh",
-        background: "#F2E8DE",
+        background: "linear-gradient(180deg, #F7F1EB, #EFE5DC, #E6D8CC)",
         fontFamily: "Inter, system-ui, sans-serif",
       }}
     >
@@ -1045,7 +1045,7 @@ export default function App() {
             >
               Carregando livros…
             </p>
-            <p style={{ margin: 0, fontSize: 14, color: "#64748B" }}>
+            <p style={{ margin: 0, fontSize: 14, color: "#000000" }}>
               Aguarde um instante.
             </p>
           </div>
