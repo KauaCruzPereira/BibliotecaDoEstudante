@@ -1,17 +1,17 @@
+import { BookIcon, SearchIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { BookCard } from "../../components/BookCard";
+import { PdfModal } from "../../components/PdfModal";
 import { BOOKS } from "../../utils/books";
 import { CHANNELS } from "../../utils/channels";
-import { BookIcon, SearchIcon } from "lucide-react";
-import { BookCard } from "../../components/BookCard";
-import { AiChat } from "../../components/AiChat";
-import { PdfModal } from "../../components/PdfModal";
+import { useBook } from "../../contexts/bookContext";
 
 export const LibraryPage = () => {
   const [activeDiscipline, setActiveDiscipline] = useState("Todas");
   const [search, setSearch] = useState("");
-  const [openBook, setOpenBook] = useState(null);
   const [books, setBooks] = useState([]);
   const [loadingBooks, setLoadingBooks] = useState(true);
+  const { openBook, setOpenBook } = useBook();
 
   useEffect(() => {
     // simulate async loading (swap with real fetch if needed)
@@ -101,7 +101,7 @@ export const LibraryPage = () => {
     : [];
 
   return (
-    <div>
+    <main style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}>
       {/* Search */}
       <div style={{ position: "relative", marginBottom: 20 }}>
         <div
@@ -295,6 +295,7 @@ export const LibraryPage = () => {
             display: "grid",
             gap: 20,
             gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+            marginBottom: 40
           }}
         >
           {filteredBooks.map((b, i) => (
@@ -355,7 +356,6 @@ export const LibraryPage = () => {
           onClose={() => setOpenBook(null)}
         />
       )}
-      <AiChat activePdfTitle={openBook?.title} />
-    </div>
+    </main>
   );
 };
