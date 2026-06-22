@@ -171,6 +171,37 @@ export const ActivitiesPage = () => {
                     </label>
                   ))}
                 </div>
+
+                <button
+                  onClick={() =>
+                    answerQuestion(question.id, question.correctAlternative)
+                  }
+                  style={{
+                    marginTop: 16,
+                    background: "#501C2F",
+                    color: "#fff",
+                    border: "none",
+                    padding: "10px 16px",
+                    borderRadius: 10,
+                    cursor: "pointer",
+                  }}
+                >
+                  Responder
+                </button>
+
+                {results[question.id] !== undefined && (
+                  <p
+                    style={{
+                      marginTop: 12,
+                      fontWeight: 600,
+                      color: results[question.id] ? "green" : "red",
+                    }}
+                  >
+                    {results[question.id]
+                      ? "✅ Resposta correta!"
+                      : "❌ Resposta incorreta"}
+                  </p>
+                )}
               </div>
             ))
           )}
