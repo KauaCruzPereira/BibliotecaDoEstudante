@@ -21,7 +21,7 @@ export const ActivitiesPage = () => {
 
       const shuffled = questions.sort(() => Math.random() - 0.5);
 
-      setQuestions(shuffled.slice(0, 3));
+      setQuestions(shuffled.slice(0, 5));
 
       setAnswers({});
       setResults({});
@@ -99,99 +99,81 @@ export const ActivitiesPage = () => {
             gap: 24,
           }}
         >
-          {questions.map((question, index) => (
+          {loadingQuestions ? (
             <div
-              key={question.id}
               style={{
-                border: "1px solid #E2E8F0",
-                borderRadius: 12,
-                padding: 20,
+                minHeight: "60vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <h3>Questão {index + 1}</h3>
-
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: question.context,
-                }}
-              />
-
-              <br />
-
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: question.alternativesIntroduction,
-                }}
-              />
-
+              <div className="spinner" />
+            </div>
+          ) : (
+            questions.map((question, index) => (
               <div
+                key={question.id}
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 8,
-                  marginTop: 12,
+                  border: "1px solid #E2E8F0",
+                  borderRadius: 12,
+                  padding: 20,
                 }}
               >
-                {question.alternatives.map((alt) => (
-                  <label
-                    key={alt.letter}
-                    style={{
-                      display: "flex",
-                      gap: 8,
-                      cursor: "pointer",
-                    }}
-                  >
-                    <input
-                      type="radio"
-                      name={question.id}
-                      value={alt.letter}
-                      onChange={() =>
-                        setAnswers((prev) => ({
-                          ...prev,
-                          [question.id]: alt.letter,
-                        }))
-                      }
-                    />
+                <h3>Questão {index + 1}</h3>
 
-                    <span>
-                      <strong>{alt.letter})</strong> {alt.text}
-                    </span>
-                  </label>
-                ))}
-              </div>
-
-              <button
-                onClick={() =>
-                  answerQuestion(question.id, question.correctAlternative)
-                }
-                style={{
-                  marginTop: 16,
-                  background: "#501C2F",
-                  color: "#fff",
-                  border: "none",
-                  padding: "10px 16px",
-                  borderRadius: 10,
-                  cursor: "pointer",
-                }}
-              >
-                Responder
-              </button>
-
-              {results[question.id] !== undefined && (
                 <p
+                  dangerouslySetInnerHTML={{
+                    __html: question.context,
+                  }}
+                />
+
+                <br />
+
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: question.alternativesIntroduction,
+                  }}
+                />
+
+                <div
                   style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
                     marginTop: 12,
-                    fontWeight: 600,
-                    color: results[question.id] ? "green" : "red",
                   }}
                 >
-                  {results[question.id]
-                    ? "✅ Resposta correta!"
-                    : "❌ Resposta incorreta"}
-                </p>
-              )}
-            </div>
-          ))}
+                  {question.alternatives.map((alt) => (
+                    <label
+                      key={alt.letter}
+                      style={{
+                        display: "flex",
+                        gap: 8,
+                        cursor: "pointer",
+                      }}
+                    >
+                      <input
+                        type="radio"
+                        name={question.id}
+                        value={alt.letter}
+                        onChange={() =>
+                          setAnswers((prev) => ({
+                            ...prev,
+                            [question.id]: alt.letter,
+                          }))
+                        }
+                      />
+
+                      <span>
+                        <strong>{alt.letter})</strong> {alt.text}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </main>
