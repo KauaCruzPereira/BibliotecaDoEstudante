@@ -1,7 +1,7 @@
 import { SendIcon, Sparkles, XIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-export const AiChat = ({ activePdfTitle }) => {
+export const AiChat = ({ activePdfTitle, open, setOpen }) => {
   async function askGroq(messages, activePdfTitle) {
     const res = await fetch("/api/chat", {
       method: "POST",
@@ -29,7 +29,6 @@ export const AiChat = ({ activePdfTitle }) => {
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [open, setOpen] = useState(false);
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -106,7 +105,7 @@ export const AiChat = ({ activePdfTitle }) => {
           border: "none",
           cursor: "pointer",
 
-          boxShadow: "0 4px 20px rgba(51,78,104,0.4)",
+          boxShadow: "0 4px 20px #501c2f6b",
 
           transition: "all .25s ease",
 
@@ -167,7 +166,7 @@ export const AiChat = ({ activePdfTitle }) => {
 
           border: isMobile ? "none" : "1px solid #E2E8F0",
 
-          boxShadow: isMobile ? "none" : "0 8px 40px rgba(0,0,0,0.18)",
+          boxShadow: isMobile ? "none" : "0 8px 40px #501c2f6b",
 
           transition: "transform .25s ease, opacity .25s ease",
 
