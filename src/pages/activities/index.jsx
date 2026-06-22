@@ -48,150 +48,152 @@ export const ActivitiesPage = () => {
   }
 
   return (
-    <div
-      style={{
-        background: "#fff",
-        borderRadius: 16,
-        padding: 24,
-        marginBottom: 32,
-        border: "1px solid #E2E8F0",
-      }}
-    >
+    <main style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: 20,
+          background: "#fff",
+          borderRadius: 16,
+          padding: 24,
+          marginBottom: 32,
+          border: "1px solid #E2E8F0",
         }}
       >
-        <h2
+        <div
           style={{
-            margin: 0,
-            fontSize: 22,
-            color: "#0F172A",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 20,
           }}
         >
-          Atividades ENEM
-        </h2>
-
-        <button
-          onClick={loadQuestions}
-          disabled={loadingQuestions}
-          style={{
-            background: "#501C2F",
-            color: "#fff",
-            border: "none",
-            padding: "10px 18px",
-            borderRadius: 12,
-            cursor: "pointer",
-          }}
-        >
-          {loadingQuestions ? "Carregando..." : "Gerar Novas Questões"}
-        </button>
-      </div>
-
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 24,
-        }}
-      >
-        {questions.map((question, index) => (
-          <div
-            key={question.id}
+          <h2
             style={{
-              border: "1px solid #E2E8F0",
-              borderRadius: 12,
-              padding: 20,
+              margin: 0,
+              fontSize: 22,
+              color: "#0F172A",
             }}
           >
-            <h3>Questão {index + 1}</h3>
+            Atividades ENEM
+          </h2>
 
-            <p
-              dangerouslySetInnerHTML={{
-                __html: question.context,
-              }}
-            />
+          <button
+            onClick={loadQuestions}
+            disabled={loadingQuestions}
+            style={{
+              background: "#501C2F",
+              color: "#fff",
+              border: "none",
+              padding: "10px 18px",
+              borderRadius: 12,
+              cursor: "pointer",
+            }}
+          >
+            {loadingQuestions ? "Carregando..." : "Gerar Novas Questões"}
+          </button>
+        </div>
 
-            <br />
-
-            <p
-              dangerouslySetInnerHTML={{
-                __html: question.alternativesIntroduction,
-              }}
-            />
-
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 24,
+          }}
+        >
+          {questions.map((question, index) => (
             <div
+              key={question.id}
               style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 8,
-                marginTop: 12,
+                border: "1px solid #E2E8F0",
+                borderRadius: 12,
+                padding: 20,
               }}
             >
-              {question.alternatives.map((alt) => (
-                <label
-                  key={alt.letter}
-                  style={{
-                    display: "flex",
-                    gap: 8,
-                    cursor: "pointer",
-                  }}
-                >
-                  <input
-                    type="radio"
-                    name={question.id}
-                    value={alt.letter}
-                    onChange={() =>
-                      setAnswers((prev) => ({
-                        ...prev,
-                        [question.id]: alt.letter,
-                      }))
-                    }
-                  />
+              <h3>Questão {index + 1}</h3>
 
-                  <span>
-                    <strong>{alt.letter})</strong> {alt.text}
-                  </span>
-                </label>
-              ))}
-            </div>
-
-            <button
-              onClick={() =>
-                answerQuestion(question.id, question.correctAlternative)
-              }
-              style={{
-                marginTop: 16,
-                background: "#501C2F",
-                color: "#fff",
-                border: "none",
-                padding: "10px 16px",
-                borderRadius: 10,
-                cursor: "pointer",
-              }}
-            >
-              Responder
-            </button>
-
-            {results[question.id] !== undefined && (
               <p
+                dangerouslySetInnerHTML={{
+                  __html: question.context,
+                }}
+              />
+
+              <br />
+
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: question.alternativesIntroduction,
+                }}
+              />
+
+              <div
                 style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 8,
                   marginTop: 12,
-                  fontWeight: 600,
-                  color: results[question.id] ? "green" : "red",
                 }}
               >
-                {results[question.id]
-                  ? "✅ Resposta correta!"
-                  : "❌ Resposta incorreta"}
-              </p>
-            )}
-          </div>
-        ))}
+                {question.alternatives.map((alt) => (
+                  <label
+                    key={alt.letter}
+                    style={{
+                      display: "flex",
+                      gap: 8,
+                      cursor: "pointer",
+                    }}
+                  >
+                    <input
+                      type="radio"
+                      name={question.id}
+                      value={alt.letter}
+                      onChange={() =>
+                        setAnswers((prev) => ({
+                          ...prev,
+                          [question.id]: alt.letter,
+                        }))
+                      }
+                    />
+
+                    <span>
+                      <strong>{alt.letter})</strong> {alt.text}
+                    </span>
+                  </label>
+                ))}
+              </div>
+
+              <button
+                onClick={() =>
+                  answerQuestion(question.id, question.correctAlternative)
+                }
+                style={{
+                  marginTop: 16,
+                  background: "#501C2F",
+                  color: "#fff",
+                  border: "none",
+                  padding: "10px 16px",
+                  borderRadius: 10,
+                  cursor: "pointer",
+                }}
+              >
+                Responder
+              </button>
+
+              {results[question.id] !== undefined && (
+                <p
+                  style={{
+                    marginTop: 12,
+                    fontWeight: 600,
+                    color: results[question.id] ? "green" : "red",
+                  }}
+                >
+                  {results[question.id]
+                    ? "✅ Resposta correta!"
+                    : "❌ Resposta incorreta"}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </main>
   );
 };

@@ -26,6 +26,7 @@ export const NavigationHeader = () => {
   const isMobile = windowWidth < 768;
 
   const navItems = [
+    { id: "homepage", label: "Início", to: "/", isInternal: true },
     { id: "library", label: "Biblioteca", to: "/library", isInternal: true },
     {
       id: "activities",
