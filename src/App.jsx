@@ -1,14 +1,17 @@
+import { useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { AiChat } from "./components/AiChat";
 import { NavigationHeader } from "./components/Header";
-import { LibraryPage } from "./pages/library";
+import { useBook } from "./contexts/bookContext";
 import { ActivitiesPage } from "./pages/activities";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { HomePage } from "./pages/homePage";
+import { LibraryPage } from "./pages/library";
+import { Footer } from "./components/Footer";
 
 export default function App() {
+  const { openBook } = useBook();
+  const [isAiOpen, setIsAiOpen] = useState(false);
+
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <div
@@ -20,15 +23,23 @@ export default function App() {
       >
         <NavigationHeader />
 
-        <main
-          style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}
-        >
+        <main>
           <Routes>
-            <Route path="/" element={<Navigate to="/library" replace />} />
+            <Route
+              path="/"
+              element={<HomePage setIsAiOpen={() => setIsAiOpen(!isAiOpen)} />}
+            />
             <Route path="/library" element={<LibraryPage />} />
             <Route path="/activities" element={<ActivitiesPage />} />
           </Routes>
+
+          <AiChat
+            activePdfTitle={openBook?.title}
+            open={isAiOpen}
+            setOpen={setIsAiOpen}
+          />
         </main>
+        <Footer />
       </div>
     </Router>
   );
