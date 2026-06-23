@@ -300,4 +300,188 @@ export const BOOKS = [
     imageUrl:
       "https://www.edocente.com.br/wp-content/uploads/2025/04/Capa-Identidade-Saraiva-Educacao-Fisica-2.webp",
   },
+  {
+    title: "A Falência",
+    authors: "Júlia Lopes de Almeida",
+    pdfUrl:
+      "https://www.epedagogia.com.br/materialbibliotecaonine/261A-falencia.pdf",
+    imageUrl:
+      "https://m.media-amazon.com/images/I/816s8NUCBcL._AC_UF1000,1000_QL80_.jpg",
+    disciplines: ["Língua Portuguesa"],
+  },
+
+  {
+    title: "Bom-Crioulo",
+    authors: "Adolfo Caminha",
+    pdfUrl:
+      "https://www.rio.rj.gov.br/dlstatic/10112/4204210/4101368/bom_crioulo.pdf",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/1/1b/Bom-Crioulo.jpg",
+    disciplines: ["Língua Portuguesa"],
+  },
+
+  {
+    title: "O Cortiço",
+    authors: "Aluísio Azevedo",
+    pdfUrl:
+      "https://www.curso-objetivo.br/vestibular/assets/download/obras-literarias/aluisio-de-azevedo/o-cortico.pdf",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/0/0d/Capa_do_livro_O_CORTI%C3%87O_de_Alu%C3%ADsio_Azevedo.jpg",
+    disciplines: ["Língua Portuguesa"],
+  },
+
+  {
+    title: "Triste Fim de Policarpo Quaresma",
+    authors: "Lima Barreto",
+    pdfUrl: "https://www.ebooksbrasil.org/adobeebook/policarpoE.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJsjsvGmcIXm7TV8gcvF04G5D1UQkRPSfwRA&s",
+    disciplines: ["Língua Portuguesa"],
+  },
+
+  {
+    title: "Clara dos Anjos",
+    authors: "Lima Barreto",
+    pdfUrl: "http://www.culturatura.com.br/obras/Clara%20dos%20Anjos.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiPKN6YvxjpBq1TbFasNJLTSZfh_4ZBVcpB7uryb_rxQyAjjW1EJRsuTI&s=10",
+    disciplines: ["Língua Portuguesa"],
+  },
+
+  {
+    title: "A Escrava Isaura",
+    authors: "Bernardo Guimarães",
+    pdfUrl:
+      "https://objdigital.bn.br/objdigital2/acervo_digital/div_obrasraras/or43590/or43590.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb-OkyViDe3XCtlIwqYuhGdtjAGQHB7XaIlA&s",
+    disciplines: ["Língua Portuguesa"],
+  },
+
+  {
+    title: "A Moreninha",
+    authors: "Joaquim Manuel de Macedo",
+    pdfUrl:
+      "https://objdigital.bn.br/objdigital2/Acervo_Digital/livros_eletronicos/bndigital0017/bndigital0017.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzlREVaXfM76lynY0T826I0ybDZ02OdkxZFDx2--mmiRrVukBd1E78Uqw&s=10",
+    disciplines: ["Língua Portuguesa"],
+  },
+
+  {
+    title: "O Alienista",
+    authors: "Machado de Assis",
+    pdfUrl:
+      "https://www.curso-objetivo.br/vestibular/assets/download/obras-literarias/machado-de-assis/o-alienista.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi5OePHQ11kDRFybJt5VGQiYV6e4At8tumJA&s",
+    disciplines: ["Língua Portuguesa"],
+  },
+
+  {
+    title: "O Missionário",
+    authors: "Inglês de Souza",
+    pdfUrl:
+      "https://objdigital.bn.br/objdigital2/Acervo_Digital/Livros_eletronicos/O%20missionario.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7yyTXhoAcYEJwxI_SZoFPHXLNUj83k-lCyxM9XZ7gSr6-zlX_UdMqtaE&s=10",
+    disciplines: ["Língua Portuguesa"],
+  },
+  {
+    title: "Modernidade Líquida",
+    authors: "Zygmunt Bauman",
+    pdfUrl:
+      "https://www.ispsn.org/sites/default/files/documentos-virtuais/pdf/modernidade_liquida.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq_hH69zGF9_uzIdsw1ywTTBCxh_XcIwk6c6QXQY_8AXpMLgyxkMT9L00&s=10",
+    disciplines: ["Sociologia"],
+  },
+
+  {
+    title: "Vigiar e Punir",
+    authors: "Michel Foucault",
+    pdfUrl:
+      "https://professor.pucgoias.edu.br/SiteDocente/admin/arquivosUpload/17637/material/Foucault_Vigiar%20e%20punir%20I%20e%20II.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPqusAgmnhg9ZWdPsnW5TBDW54q5kcmmIi0Q&s",
+    disciplines: ["Sociologia"],
+  },
+
+  {
+    title: "O Contrato Social",
+    authors: "Jean-Jacques Rousseau",
+    pdfUrl: "https://www.ebooksbrasil.org/adobeebook/contratosocial.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnL3D4y2fenktGrUED1BWKLOcjJ_ilSiOcGixwx9nDBLTOtW0sYsOYjqSV&s=10",
+    disciplines: ["Filosofia"],
+  },
+
+  {
+    title: "A Elite do Atraso",
+    authors: "Jessé Souza",
+    pdfUrl:
+      "https://www.mprj.mp.br/documents/20184/1330165/A_Elite_do_atraso_-_da_escrividao_%C3%A0_Lava-Jato.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW9mLZ8CqGbNACTxYz09v-5gwDPMTI1brcV9qjV3f15w&s=10",
+    disciplines: ["Sociologia"],
+  },
+
+  {
+    title: "Sapiens: Uma Breve História da Humanidade",
+    authors: "Yuval Noah Harari",
+    pdfUrl:
+      "https://maurooliveira.blog/wp-content/uploads/2019/12/pdf-sapiens-uma-breve-hsitc3b3ria-da-humanidade.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwkq3sC8MaN6SHQtvW4W5llgxz4RzynMWPPIgkc6jyaw&s=10",
+    disciplines: ["História"],
+  },
+
+  {
+    title: "Pequeno Manual Antirracista",
+    authors: "Djamila Ribeiro",
+    pdfUrl:
+      "https://cogetes.epsjv.fiocruz.br/storage/ANEXO_SOCIOLOGIA_2%C2%BAANO_PEQUENO_MANUAL_ANTIRRACISTA_RIBEIRO_DJAMILA-v_5f0659881d9e4.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsWCFy_FJjk0MthC830tfRdxyR7-gbyzBA-cmHOrANhw&s=10",
+    disciplines: ["Sociologia"],
+  },
+
+  {
+    title: "A Sociedade do Espetáculo",
+    authors: "Guy Debord",
+    pdfUrl: "https://www.marxists.org/portugues/debord/1967/11/sociedade.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJbWsQzLPZbtQaj25jfajYMsHSAhcNe01FPH_3ZvwNlw&s=10",
+    disciplines: ["Filosofia"],
+  },
+
+  {
+    title: "O Mundo de Sofia",
+    authors: "Jostein Gaarder",
+    pdfUrl:
+      "https://www.colegioceijf.com.br/wp-content/uploads/2021/06/O-MUNDO-DE-SOFIA-JOSTEIN-GAARDEN-1-3o-B.pdf",
+    imageUrl:
+      "https://m.media-amazon.com/images/I/91U9VjiT-xL._AC_UF1000,1000_QL80_.jpg",
+    disciplines: ["Filosofia"],
+  },
+
+  {
+    title: "A Peste",
+    authors: "Albert Camus",
+    pdfUrl:
+      "https://www.ihu.unisinos.br/images/ihu/2020/eventos/quarentena/Livro-1947-CAMUS-A_Peste.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpGCEWSwbdwRAd_jCu13FUNGJrSXA0ULMoNGamzuBvLgUBvmsg6gNskjE&s=10",
+    disciplines: ["Filosofia"],
+  },
+
+  {
+    title: "1984",
+    authors: "George Orwell",
+    pdfUrl:
+      "https://multimidia.gazetadopovo.com.br/media/info/2022/202209/1984/e-book-1984.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+    disciplines: ["Filosofia"],
+  },
 ];
