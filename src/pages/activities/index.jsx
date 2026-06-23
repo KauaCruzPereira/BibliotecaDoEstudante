@@ -10,7 +10,9 @@ export const ActivitiesPage = () => {
     try {
       setLoadingQuestions(true);
 
-      const res = await fetch("https://api.enem.dev/v1/exams/2023/questions");
+      const res = await fetch(
+        "https://api.enem.dev/v1/exams/2023/questions?limit=30",
+      );
 
       const data = await res.json();
 
@@ -113,7 +115,7 @@ export const ActivitiesPage = () => {
           ) : (
             questions.map((question, index) => (
               <div
-                key={question.id}
+                key={question.index}
                 style={{
                   border: "1px solid #E2E8F0",
                   borderRadius: 12,
@@ -155,14 +157,16 @@ export const ActivitiesPage = () => {
                     >
                       <input
                         type="radio"
-                        name={question.id}
+                        name={question.index}
                         value={alt.letter}
-                        onChange={() =>
-                          setAnswers((prev) => ({
+                        checked={answers[question.index] === alt.letter}
+                        onChange={() => {
+                          (setAnswers((prev) => ({
                             ...prev,
-                            [question.id]: alt.letter,
-                          }))
-                        }
+                            [question.index]: alt.letter,
+                          })),
+                            console.log(question.index));
+                        }}
                       />
 
                       <span>
@@ -174,7 +178,7 @@ export const ActivitiesPage = () => {
 
                 <button
                   onClick={() =>
-                    answerQuestion(question.id, question.correctAlternative)
+                    answerQuestion(question.index, question.correctAlternative)
                   }
                   style={{
                     marginTop: 16,
@@ -189,15 +193,15 @@ export const ActivitiesPage = () => {
                   Responder
                 </button>
 
-                {results[question.id] !== undefined && (
+                {results[question.index] !== undefined && (
                   <p
                     style={{
                       marginTop: 12,
                       fontWeight: 600,
-                      color: results[question.id] ? "green" : "red",
+                      color: results[question.index] ? "green" : "red",
                     }}
                   >
-                    {results[question.id]
+                    {results[question.index]
                       ? "✅ Resposta correta!"
                       : "❌ Resposta incorreta"}
                   </p>
