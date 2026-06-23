@@ -101,7 +101,7 @@ export const LibraryPage = () => {
     : [];
 
   return (
-    <main style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}>
+    <main style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 8px" }}>
       {/* Search */}
       <div style={{ position: "relative", marginBottom: 20 }}>
         <div
