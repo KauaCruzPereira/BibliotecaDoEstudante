@@ -11,7 +11,7 @@ export const ActivitiesPage = () => {
       setLoadingQuestions(true);
 
       const res = await fetch(
-        "https://api.enem.dev/v1/exams/2023/questions?limit=30",
+        "https://api.enem.dev/v1/exams/2023/questions?limit=50",
       );
 
       const data = await res.json();
@@ -49,8 +49,23 @@ export const ActivitiesPage = () => {
     }));
   }
 
+  const extractImages = (text) => {
+    if (!text) return [];
+
+    const regex = /!\[\]\((.*?)\)/g;
+    const matches = [...text.matchAll(regex)];
+
+    return matches.map((m) => m[1]);
+  };
+
+  const removeImagesFromText = (text) => {
+    if (!text) return "";
+
+    return text.replace(/!\[\]\((.*?)\)/g, "");
+  };
+
   return (
-    <main style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 24px" }}>
+    <main style={{ maxWidth: 1280, margin: "0 auto", padding: "32px 8px" }}>
       <div
         style={{
           background: "#fff",
@@ -113,101 +128,115 @@ export const ActivitiesPage = () => {
               <div className="spinner" />
             </div>
           ) : (
-            questions.map((question, index) => (
-              <div
-                key={question.index}
-                style={{
-                  border: "1px solid #E2E8F0",
-                  borderRadius: 12,
-                  padding: 20,
-                }}
-              >
-                <h3>Questão {index + 1}</h3>
+            questions.map((question, index) => {
+              const context = question.context || "";
+              const images = extractImages(context);
+              const cleanContext = removeImagesFromText(context);
 
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: question.context,
-                  }}
-                />
-
-                <br />
-
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: question.alternativesIntroduction,
-                  }}
-                />
-
+              return (
                 <div
+                  key={question.index}
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 8,
-                    marginTop: 12,
+                    border: "1px solid #E2E8F0",
+                    borderRadius: 12,
+                    padding: 20,
                   }}
                 >
-                  {question.alternatives.map((alt) => (
-                    <label
-                      key={alt.letter}
+                  <h3>Questão {index + 1}</h3>
+
+                  {images.map((img) => (
+                    <img
+                      key={img}
+                      src={img}
+                      alt="Questão"
                       style={{
-                        display: "flex",
-                        gap: 8,
-                        cursor: "pointer",
+                        maxWidth: "100%",
+                        borderRadius: 12,
+                        marginBottom: 12,
                       }}
-                    >
-                      <input
-                        type="radio"
-                        name={question.index}
-                        value={alt.letter}
-                        checked={answers[question.index] === alt.letter}
-                        onChange={() => {
-                          (setAnswers((prev) => ({
-                            ...prev,
-                            [question.index]: alt.letter,
-                          })),
-                            console.log(question.index));
-                        }}
-                      />
-
-                      <span>
-                        <strong>{alt.letter})</strong> {alt.text}
-                      </span>
-                    </label>
+                    />
                   ))}
-                </div>
 
-                <button
-                  onClick={() =>
-                    answerQuestion(question.index, question.correctAlternative)
-                  }
-                  style={{
-                    marginTop: 16,
-                    background: "#501C2F",
-                    color: "#fff",
-                    border: "none",
-                    padding: "10px 16px",
-                    borderRadius: 10,
-                    cursor: "pointer",
-                  }}
-                >
-                  Responder
-                </button>
-
-                {results[question.index] !== undefined && (
                   <p
+                    dangerouslySetInnerHTML={{ __html: cleanContext }}
+                    style={{ paddingTop: 20, paddingBottom: 20 }}
+                  />
+
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: question.alternativesIntroduction,
+                    }}
+                    style={{ paddingBottom: 20 }}
+                  />
+
+                  <div
+                    style={{ display: "flex", flexDirection: "column", gap: 8 }}
+                  >
+                    {question.alternatives.map((alt) => (
+                      <label
+                        key={alt.letter}
+                        style={{
+                          display: "flex",
+                          gap: 8,
+                          cursor: "pointer",
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name={question.index}
+                          value={alt.letter}
+                          checked={answers[question.index] === alt.letter}
+                          onChange={() => {
+                            setAnswers((prev) => ({
+                              ...prev,
+                              [question.index]: alt.letter,
+                            }));
+                          }}
+                        />
+
+                        <span>
+                          <strong>{alt.letter})</strong> {alt.text}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+
+                  <button
+                    onClick={() =>
+                      answerQuestion(
+                        question.index,
+                        question.correctAlternative,
+                      )
+                    }
                     style={{
-                      marginTop: 12,
-                      fontWeight: 600,
-                      color: results[question.index] ? "green" : "red",
+                      marginTop: 16,
+                      background: "#501C2F",
+                      color: "#fff",
+                      border: "none",
+                      padding: "10px 16px",
+                      borderRadius: 10,
+                      cursor: "pointer",
                     }}
                   >
-                    {results[question.index]
-                      ? "✅ Resposta correta!"
-                      : "❌ Resposta incorreta"}
-                  </p>
-                )}
-              </div>
-            ))
+                    Responder
+                  </button>
+
+                  {results[question.index] !== undefined && (
+                    <p
+                      style={{
+                        marginTop: 12,
+                        fontWeight: 600,
+                        color: results[question.index] ? "green" : "red",
+                      }}
+                    >
+                      {results[question.index]
+                        ? "✅ Resposta correta!"
+                        : "❌ Resposta incorreta"}
+                    </p>
+                  )}
+                </div>
+              );
+            })
           )}
         </div>
       </div>
