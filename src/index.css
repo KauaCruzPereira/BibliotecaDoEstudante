@@ -437,6 +437,12 @@ summary:focus-visible {
   box-shadow: 0 14px 26px rgba(0, 0, 0, 0.18);
 }
 
+.button--secondary {
+  background: var(--wine);
+  color: var(--beige);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.18);
+}
+
 .button--ghost {
   border-color: rgba(255, 255, 255, 0.58);
   color: #fff;

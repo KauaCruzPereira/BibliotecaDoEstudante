@@ -7,6 +7,7 @@ import { ActivitiesPage } from "./pages/activities";
 import { HomePage } from "./pages/homePage";
 import { LibraryPage } from "./pages/library";
 import { Footer } from "./components/Footer";
+import { EssayPage } from "./pages/essayPage";
 
 export default function App() {
   const { openBook } = useBook();
@@ -31,6 +32,7 @@ export default function App() {
             />
             <Route path="/library" element={<LibraryPage />} />
             <Route path="/activities" element={<ActivitiesPage />} />
+            <Route path="/essay" element={<EssayPage />} />
           </Routes>
 
           <AiChat

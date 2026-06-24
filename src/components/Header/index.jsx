@@ -62,6 +62,12 @@ export const NavigationHeader = () => {
       isInternal: true,
     },
     {
+      id: "essay",
+      label: "Redação",
+      to: "/essay",
+      isInternal: true,
+    },
+    {
       id: "solverequacoes",
       label: "SolverEquações",
       to: EXTERNAL_URLS.solverequacoes,
