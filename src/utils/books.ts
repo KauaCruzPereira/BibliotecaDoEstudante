@@ -365,7 +365,7 @@ export const BOOKS = [
       "https://www.curso-objetivo.br/vestibular/assets/download/obras-literarias/machado-de-assis/o-alienista.pdf",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi5OePHQ11kDRFybJt5VGQiYV6e4At8tumJA&s",
-    disciplines: ["Língua Portuguesa"],
+    disciplines: ["História"],
   },
 
   {
@@ -481,7 +481,7 @@ export const BOOKS = [
   pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_7b9cdae2b94e467699d0319e05c35acf.pdf",
      imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Awi3ZCQEyq2MARGg1E5hM9AxOMPhHuE-W3JLSmB1lQDr5fFM2brUS2s&s=10",
-  disciplines: ["Redação"],
+  disciplines: ["História"],
 },
 {
   title: "América Latina: Males de Origem",
