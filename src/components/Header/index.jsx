@@ -57,7 +57,7 @@ export const NavigationHeader = () => {
     { id: "library", label: "Biblioteca", to: "/library", isInternal: true },
     {
       id: "activities",
-      label: "Atividades",
+      label: "Simulados",
       to: "/activities",
       isInternal: true,
     },

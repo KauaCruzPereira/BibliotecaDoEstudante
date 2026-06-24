@@ -90,7 +90,7 @@ export const ActivitiesPage = () => {
               color: "#0F172A",
             }}
           >
-            Atividades ENEM
+            Simulado ENEM
           </h2>
 
           <button
