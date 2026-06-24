@@ -33,7 +33,7 @@ export const BOOKS = [
     title: "Identidade Saraiva: Redação",
     authors:
       "Carolina Dias Vianna, Christiane Damien Codenhoto, Paula Baracat, William Cereja",
-    disciplines: [, "Redação"],
+    disciplines: ["Redação"],
     pdfUrl:
       "https://content.edocente.com.br/files/IDENTIDADE%20SARAIVA_PNLD26_REDACAO_VU_MP.pdf",
     imageUrl:
@@ -83,7 +83,7 @@ export const BOOKS = [
     title: "Do Seu Jeito: Redação",
     authors:
       "Alice Vasques de Camargo, Carolina Pereira, Juliana de Almeida Valverde",
-    disciplines: [, "Redação"],
+    disciplines: ["Redação"],
     pdfUrl:
       "https://content.edocente.com.br/files/DOSEUJEITO_PNLD26_Redacao_VU_MP.pdf",
     imageUrl:
@@ -174,7 +174,7 @@ export const BOOKS = [
   {
     title: "Identidade Saraiva: Química",
     authors: "João Usberco, Philippe Spitaleri Kaufmann",
-    disciplines: [, "Química"],
+    disciplines: ["Química"],
     pdfUrl:
       "https://content.edocente.com.br/files/888135_IDENTIDADE%20SARAIVA_QUIMICA_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -289,16 +289,6 @@ export const BOOKS = [
       "https://content.edocente.com.br/files/00f1ac55-32f2-4e93-94e4-98f5ae8104fd/ESPANHOL_SINTESIS_PNLD26_VU_LP_lin.pdf",
     imageUrl:
       "https://www.edocente.com.br/wp-content/uploads/2025/04/Capa-Sintesis-Espanhol-Identidade-Saraiva.webp",
-  },
-  {
-    title: "Identidade Saraiva: Educação Física",
-    authors:
-      "André Vilela, Eliana Pougy, Jacqueline Cristina Jesus Martins, Maria Emilia de Lima",
-    disciplines: ["Educação Física"],
-    pdfUrl:
-      "https://content.edocente.com.br/files/IDENTIDADE_SARAIVA_PNLD26_EM_ED_FISICA_VU_MP.pdf",
-    imageUrl:
-      "https://www.edocente.com.br/wp-content/uploads/2025/04/Capa-Identidade-Saraiva-Educacao-Fisica-2.webp",
   },
   {
     title: "A Falência",
@@ -588,6 +578,13 @@ export const BOOKS = [
   pdfUrl: "https://archivepublicdomain.com/files/2025/03/Da-Terra-a-Lua-Julio-Verne.pdf?t=334a7f20471ee414e3",
      imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfHLlEZJo2Y0AabrjLVn07QK2_hQDA_lR_qPq1Pn2vTQ&s=10",
+  disciplines: ["Matemática"],
+},
+  {
+  title: "O Homem que Calculava",
+  authors: "Malba Tahan (pseudônimo de Júlio César de Mello e Souza)",
+  pdfUrl: "https://leituramelhorviagem.wordpress.com/wp-content/uploads/2016/11/o-homem-que-calculava-malba-tahan-1.pdf",
+  imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI0s3-p1ne1FdShqbXeM5ZEwC0lcDZORgW9KNBX2-W4w&s",
   disciplines: ["Matemática"],
 },
 ];
