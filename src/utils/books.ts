@@ -484,4 +484,69 @@ export const BOOKS = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
     disciplines: ["Filosofia"],
   },
+  
+ {
+  title: "Os Sertões",
+  authors: "Euclides da Cunha",
+  pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_7b9cdae2b94e467699d0319e05c35acf.pdf",
+     imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Redação"],
+},
+{
+  title: "América Latina: Males de Origem",
+  authors: "Manoel Bomfim",
+  pdfUrl: "https://fundar.org.br/wp-content/uploads/2021/06/america-latina-males-de-origem.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Redação"],
+},
+{
+  title: "O Abolicionismo",
+  authors: "Joaquim Nabuco",
+  pdfUrl: "https://camara-leg-br.usrfiles.com/ugd/5ca0e9_aa6e5d298d3443d3a8923d0eb5b58b3a.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Redação"],
+},
+{
+  title: "A Origem das Espécies",
+  authors: "Charles Darwin",
+  pdfUrl: "https://domainpublic.wordpress.com/wp-content/uploads/2022/01/darwin.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Redação"],
+},
+{
+  title: "Do Contrato Social",
+  authors: "Jean-Jacques Rousseau",
+  pdfUrl: "https://www.ebooksbrasil.org/adobeebook/contratosocial.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Redação"],
+},
+{
+  title: "Cartas Chilenas",
+  authors: "Tomás Antônio Gonzaga",
+  pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_f45b66f4a4f94f52ad86019271c72574.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Redação"],
+},
+{
+  title: "Elogio da Loucura",
+  authors: "Erasmo de Roterdã",
+  pdfUrl: "https://www.ebooksbrasil.org/adobeebook/erasmo.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Redação"],
+},
+{
+  title: "Segundo Tratado Sobre o Governo Civil",
+  authors: "John Locke",
+  pdfUrl: "https://www.xr.pro.br/if/locke-segundo_tratado_sobre_o_governo.pdf",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Redação"],
+},
 ];
