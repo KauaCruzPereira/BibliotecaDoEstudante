@@ -549,4 +549,45 @@ export const BOOKS = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
   disciplines: ["Redação"],
 },
+  {
+  title: "As Aventuras de Sherlock Holmes",
+  authors: "Arthur Conan Doyle",
+  pdfUrl: "https://kbook.com.br/wp-content/files_mf/asaventurasdesherlockholmes.pdf",
+       imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfkAObglmOekTDjzRznQdgQ5aqDgUtU7UxZdZ-6CQd7w&s=10",
+  disciplines: ["Matemática"],
+},
+
+  {
+  title: "Vinte Mil Léguas Submarinas",
+  authors: "Júlio Verne",
+  pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_ba904ddcc828485b865fbd0a48a5ac62.pdf",
+       imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Matemática"],
+},
+{
+  title: "Viagem ao Centro da Terra",
+  authors: "Júlio Verne",
+  pdfUrl: "https://archivepublicdomain.com/files/2025/03/viagem_ao_centro_da_terra_-_julio_verne.pdf?t=f8c6ac3743183cdf9a9d68863baf4406c233a67e3f6d061659b44e73a4c6ee26",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Matemática"],
+},
+{
+  title: "A Ilha do Dr. Moreau",
+  authors: "H. G. Wells",
+  pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_4df7e093815b42a4a4e31a043a7980c3.pdf",
+     imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Matemática"],
+},
+{
+  title: "Da Terra à Lua",
+  authors: "Júlio Verne",
+  pdfUrl: "https://archivepublicdomain.com/files/2025/03/Da-Terra-a-Lua-Julio-Verne.pdf?t=334a7f20471ee414e3",
+     imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+  disciplines: ["Matemática"],
+},
 ];
