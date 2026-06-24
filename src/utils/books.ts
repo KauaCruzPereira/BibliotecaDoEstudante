@@ -538,7 +538,7 @@ export const BOOKS = [
   authors: "Erasmo de Roterdã",
   pdfUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScF4g25GKNnM7WVRqvY_oevfwxI7EQeEXRQPa7OcbkLA&s=10",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScF4g25GKNnM7WVRqvY_oevfwxI7EQeEXRQPa7OcbkLA&s=10",
   disciplines: ["Redação"],
 },
 {
