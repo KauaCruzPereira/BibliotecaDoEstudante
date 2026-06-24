@@ -490,7 +490,7 @@ export const BOOKS = [
   authors: "Euclides da Cunha",
   pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_7b9cdae2b94e467699d0319e05c35acf.pdf",
      imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Awi3ZCQEyq2MARGg1E5hM9AxOMPhHuE-W3JLSmB1lQDr5fFM2brUS2s&s=10",
   disciplines: ["Redação"],
 },
 {
@@ -498,7 +498,7 @@ export const BOOKS = [
   authors: "Manoel Bomfim",
   pdfUrl: "https://fundar.org.br/wp-content/uploads/2021/06/america-latina-males-de-origem.pdf",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://m.media-amazon.com/images/I/81Yox7+EKgL._UF1000,1000_QL80_.jpg",
   disciplines: ["Redação"],
 },
 {
@@ -506,7 +506,7 @@ export const BOOKS = [
   authors: "Joaquim Nabuco",
   pdfUrl: "https://camara-leg-br.usrfiles.com/ugd/5ca0e9_aa6e5d298d3443d3a8923d0eb5b58b3a.pdf",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTRvABCHe_q1THN7feoxsPGtOWlLPWeUVw7dRM3HlXnQ&s=10",
   disciplines: ["Redação"],
 },
 {
@@ -514,7 +514,7 @@ export const BOOKS = [
   authors: "Charles Darwin",
   pdfUrl: "https://domainpublic.wordpress.com/wp-content/uploads/2022/01/darwin.pdf",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSitOrruNlpj7UGzWzD1ZnwxTb3uhzYY4ttCuO6jJugDg&s=10",
   disciplines: ["Redação"],
 },
 {
@@ -522,7 +522,7 @@ export const BOOKS = [
   authors: "Jean-Jacques Rousseau",
   pdfUrl: "https://www.ebooksbrasil.org/adobeebook/contratosocial.pdf",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX0Gs4kn8cbps1JfmC-wAAaa1C5Vnf6JJ6YWyw7ZcpXQ&s=10",
   disciplines: ["Redação"],
 },
 {
@@ -530,13 +530,13 @@ export const BOOKS = [
   authors: "Tomás Antônio Gonzaga",
   pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_f45b66f4a4f94f52ad86019271c72574.pdf",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://m.media-amazon.com/images/I/71uYQhWCBZL._AC_UF1000,1000_QL80_.jpg",
   disciplines: ["Redação"],
 },
 {
   title: "Elogio da Loucura",
   authors: "Erasmo de Roterdã",
-  pdfUrl: "https://www.ebooksbrasil.org/adobeebook/erasmo.pdf",
+  pdfUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScF4g25GKNnM7WVRqvY_oevfwxI7EQeEXRQPa7OcbkLA&s=10",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
   disciplines: ["Redação"],
@@ -546,7 +546,7 @@ export const BOOKS = [
   authors: "John Locke",
   pdfUrl: "https://www.xr.pro.br/if/locke-segundo_tratado_sobre_o_governo.pdf",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://m.media-amazon.com/images/I/81fFpc97I8L._UF1000,1000_QL80_.jpg",
   disciplines: ["Redação"],
 },
   {
@@ -563,7 +563,7 @@ export const BOOKS = [
   authors: "Júlio Verne",
   pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_ba904ddcc828485b865fbd0a48a5ac62.pdf",
        imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfgOcII_kewllkBiVyzFRYvFGEYEB0Em4fjr-GRzPMFw&s=10",
   disciplines: ["Matemática"],
 },
 {
@@ -571,7 +571,7 @@ export const BOOKS = [
   authors: "Júlio Verne",
   pdfUrl: "https://archivepublicdomain.com/files/2025/03/viagem_ao_centro_da_terra_-_julio_verne.pdf?t=f8c6ac3743183cdf9a9d68863baf4406c233a67e3f6d061659b44e73a4c6ee26",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN5TMIEq0fjGmqdVY-rLPb9uhq-RT6ZJ25hZUY9SDgmg&s=10",
   disciplines: ["Matemática"],
 },
 {
@@ -579,7 +579,7 @@ export const BOOKS = [
   authors: "H. G. Wells",
   pdfUrl: "https://5ca0e999-de9a-47e0-9b77-7e3eeab0592c.usrfiles.com/ugd/5ca0e9_4df7e093815b42a4a4e31a043a7980c3.pdf",
      imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq3QD7CqTY9VIrIbLZso1GOJyVXr6oUh1N4UjHpvL9-Q&s=10",
   disciplines: ["Matemática"],
 },
 {
@@ -587,7 +587,7 @@ export const BOOKS = [
   authors: "Júlio Verne",
   pdfUrl: "https://archivepublicdomain.com/files/2025/03/Da-Terra-a-Lua-Julio-Verne.pdf?t=334a7f20471ee414e3",
      imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_9YEvR_sU2KNuHO4F3DX-8XNxVS7RLigb4y8SG5xBJw&s=10",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfHLlEZJo2Y0AabrjLVn07QK2_hQDA_lR_qPq1Pn2vTQ&s=10",
   disciplines: ["Matemática"],
 },
 ];
