@@ -536,7 +536,7 @@ export const BOOKS = [
 {
   title: "Elogio da Loucura",
   authors: "Erasmo de Roterdã",
-  pdfUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScF4g25GKNnM7WVRqvY_oevfwxI7EQeEXRQPa7OcbkLA&s=10",
+  pdfUrl: "https://www.ebooksbrasil.org/adobeebook/erasmo.pdf",
     imageUrl:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScF4g25GKNnM7WVRqvY_oevfwxI7EQeEXRQPa7OcbkLA&s=10",
   disciplines: ["Redação"],
