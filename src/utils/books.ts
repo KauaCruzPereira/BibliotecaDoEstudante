@@ -317,7 +317,7 @@ export const BOOKS = [
       "https://www.curso-objetivo.br/vestibular/assets/download/obras-literarias/aluisio-de-azevedo/o-cortico.pdf",
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/0/0d/Capa_do_livro_O_CORTI%C3%87O_de_Alu%C3%ADsio_Azevedo.jpg",
-    disciplines: ["Língua Portuguesa"],
+    disciplines: ["Geografia"],
   },
 
   {
@@ -586,5 +586,12 @@ export const BOOKS = [
   pdfUrl: "https://leituramelhorviagem.wordpress.com/wp-content/uploads/2016/11/o-homem-que-calculava-malba-tahan-1.pdf",
   imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI0s3-p1ne1FdShqbXeM5ZEwC0lcDZORgW9KNBX2-W4w&s",
   disciplines: ["Matemática"],
+},
+  {
+  title: "Memórias de um Sargento de Milícias",
+  authors: "Manuel Antônio de Almeida",
+  pdfUrl: "https://fundar.org.br/wp-content/uploads/2021/06/memorias-de-um-sargento-de-milicias.pdf",
+  imageUrl: "https://m.media-amazon.com/images/I/71MebPfNmQL._AC_UF1000,1000_QL80_.jpg",
+  disciplines: ["Geografia"],
 },
 ];
