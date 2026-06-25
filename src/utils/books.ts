@@ -183,7 +183,7 @@ export const BOOKS = [
   {
     title: "Identidade Saraiva: Física",
     authors: "José Roberto Bonjorno",
-    disciplines: [, "Física"],
+    disciplines: ["Física"],
     pdfUrl:
       "https://content.edocente.com.br/files/888143_IDENTIDADE%20SARAIVA_FISICA_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -201,7 +201,7 @@ export const BOOKS = [
   {
     title: "Do Seu Jeito: Química",
     authors: "Rodrigo Putvinskis",
-    disciplines: [, "Química"],
+    disciplines: ["Química"],
     pdfUrl:
       "https://content.edocente.com.br/files/888047_DOSEUJEITO_Quimica_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -210,7 +210,7 @@ export const BOOKS = [
   {
     title: "Do Seu Jeito: Física",
     authors: "Alysson Artuso",
-    disciplines: [, "Física"],
+    disciplines: ["Física"],
     pdfUrl:
       "https://content.edocente.com.br/files/888191_DOSEUJEITO_Fisica_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -228,7 +228,7 @@ export const BOOKS = [
   {
     title: "Ciência Viva: Química",
     authors: "Alfredo Mateus, Andréa Horta, Eduardo Mortimer",
-    disciplines: [, "Química"],
+    disciplines: ["Química"],
     pdfUrl:
       "https://content.edocente.com.br/files/888063_Ciencia%20Viva_Quimica_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -237,7 +237,7 @@ export const BOOKS = [
   {
     title: "Ciência Viva: Física",
     authors: "Arjuna Panzera, Esdras Garcia, Marcos Assunção Pimenta",
-    disciplines: [, "Física"],
+    disciplines: ["Física"],
     pdfUrl:
       "https://content.edocente.com.br/files/888079_Ciencia%20Viva_Fisica_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -246,7 +246,7 @@ export const BOOKS = [
   {
     title: "Do Seu Jeito: História",
     authors: "Adriana Machado Dias, Marco Pellegrini",
-    disciplines: [, "História"],
+    disciplines: ["História"],
     pdfUrl:
       "https://content.edocente.com.br/files/888031_DOSEUJEITO_Historia_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -255,7 +255,7 @@ export const BOOKS = [
   {
     title: "Do Seu Jeito: Geografia",
     authors: "Eustáquio de Sene",
-    disciplines: [, "Geografia"],
+    disciplines: ["Geografia"],
     pdfUrl:
       "https://content.edocente.com.br/files/888023_DOSEUJEITO_Geografia_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
@@ -274,7 +274,7 @@ export const BOOKS = [
     title: "Do Seu Jeito: Sociologia",
     authors:
       "Celso Rocha de Barros, Henrique Amorim, Igor José de Renó Machado",
-    disciplines: [, "Sociologia"],
+    disciplines: ["Sociologia"],
     pdfUrl:
       "https://content.edocente.com.br/files/888320_DOSEUJEITO_Sociologia_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
