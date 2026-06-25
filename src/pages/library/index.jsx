@@ -137,7 +137,7 @@ export const LibraryPage = () => {
             boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
             fontFamily: "inherit",
           }}
-          onFocus={(e) => (e.target.style.borderColor = "#334E68")}
+          onFocus={(e) => (e.target.style.borderColor = "#501C2F")}
           onBlur={(e) => (e.target.style.borderColor = "#E2E8F0")}
         />
       </div>
@@ -168,7 +168,7 @@ export const LibraryPage = () => {
                     ? {
                         background: "#501C2F",
                         color: "#fff",
-                        border: "1px solid #334E68",
+                        border: "1px solid #501C2F",
                       }
                     : {
                         background: "#fff",
@@ -295,7 +295,7 @@ export const LibraryPage = () => {
             display: "grid",
             gap: 20,
             gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-            marginBottom: 40
+            marginBottom: 40,
           }}
         >
           {filteredBooks.map((b, i) => (
@@ -338,7 +338,7 @@ export const LibraryPage = () => {
               borderRadius: 12,
               fontSize: 14,
               fontWeight: 500,
-              background: "#334E68",
+              background: "#501C2F",
               color: "#fff",
               border: "none",
               cursor: "pointer",

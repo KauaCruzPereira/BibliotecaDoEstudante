@@ -54,7 +54,7 @@ export const BookCard = ({ book, onOpen }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "#334E68",
+              background: "#501C2F",
             }}
           >
             <BookIcon size={40} color="#ffffff" />
