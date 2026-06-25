@@ -264,7 +264,7 @@ export const BOOKS = [
   {
     title: "Do Seu Jeito: Filosofia",
     authors: "Sílvio Donizetti de Oliveira Gallo",
-    disciplines: [, "Filosofia"],
+    disciplines: ["Filosofia"],
     pdfUrl:
       "https://content.edocente.com.br/files/888039_DOSEUJEITO_Filosofia_VU_PNLD2026_MP_DIV.pdf",
     imageUrl:
