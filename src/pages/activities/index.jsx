@@ -11,7 +11,7 @@ export const ActivitiesPage = () => {
       setLoadingQuestions(true);
 
       const res = await fetch(
-        "https://api.enem.dev/v1/exams/2023/questions?limit=50",
+        "https://api.enem.dev/v1/exams/2023/questions?limit=20",
       );
 
       const data = await res.json();
