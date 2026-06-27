@@ -11,7 +11,7 @@ import { useBook } from "./contexts/bookContext";
 
 export default function App() {
   const { openBook } = useBook();
-  const [isAiOpen, setIsAiOpen] = useState(false);
+  const [isAiOpen, setIsAiOpen] = useState<boolean | null>(false);
 
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
@@ -36,7 +36,7 @@ export default function App() {
           </Routes>
 
           <AiChat
-            activePdfTitle={openBook?.title}
+            activePdfTitle={openBook?.title ?? ""}
             open={isAiOpen}
             setOpen={setIsAiOpen}
           />

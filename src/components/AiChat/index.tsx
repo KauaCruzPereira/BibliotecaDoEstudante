@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
 type AiChatType = {
   activePdfTitle: string;
-  open: boolean;
+  open: boolean | null;
   setOpen: Dispatch<SetStateAction<boolean | null>>;
 };
 
