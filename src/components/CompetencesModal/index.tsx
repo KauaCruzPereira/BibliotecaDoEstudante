@@ -1,4 +1,16 @@
-export const CompetencesModal = ({ open, onClose, children }) => {
+import { ReactNode } from "react";
+
+type CompetencesModalType = {
+  open: boolean;
+  onClose: () => void;
+  children: ReactNode;
+};
+
+export const CompetencesModal = ({
+  open,
+  onClose,
+  children,
+}: CompetencesModalType) => {
   if (!open) return null;
 
   return (

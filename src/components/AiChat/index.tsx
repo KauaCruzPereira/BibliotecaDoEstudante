@@ -1,8 +1,14 @@
 import { SendIcon, Sparkles, XIcon } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 
-export const AiChat = ({ activePdfTitle, open, setOpen }) => {
-  async function askGroq(messages, activePdfTitle) {
+type AiChatType = {
+  activePdfTitle: string;
+  open: boolean;
+  setOpen: Dispatch<SetStateAction<boolean | null>>;
+};
+
+export const AiChat = ({ activePdfTitle, open, setOpen }: AiChatType) => {
+  async function askGroq(message: any, activePdfTitle: string) {
     const res = await fetch("/api/chat", {
       method: "POST",
       headers: {
@@ -11,7 +17,7 @@ export const AiChat = ({ activePdfTitle, open, setOpen }) => {
       body: JSON.stringify({
         model: "llama-3.3-70b-versatile",
         activePdfTitle,
-        messages,
+        message,
       }),
     });
 
@@ -24,13 +30,13 @@ export const AiChat = ({ activePdfTitle, open, setOpen }) => {
     {
       role: "assistant",
       content:
-        "Olá! 👋 Sou seu assistente de estudos. Pode me perguntar sobre qualquer matéria — estou aqui para ajudar!",
+        "Olá! Sou seu assistente de estudos. Pode me perguntar sobre qualquer matéria, estou aqui para ajudar!",
     },
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const bottomRef = useRef(null);
-  const inputRef = useRef(null);
+  const bottomRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -68,8 +74,7 @@ export const AiChat = ({ activePdfTitle, open, setOpen }) => {
         ...m,
         {
           role: "assistant",
-          content:
-            "⚠️ Erro ao conectar com a IA. Verifique a chave da API Groq.",
+          content: "Erro ao conectar com a IA. Verifique a chave da API Groq.",
         },
       ]);
     } finally {

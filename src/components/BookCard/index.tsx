@@ -1,7 +1,13 @@
 import { BookIcon } from "lucide-react";
 import { useState } from "react";
+import { Books } from "../../types/book.type";
 
-export const BookCard = ({ book, onOpen }) => {
+type BookCardType = {
+  book: Books;
+  onOpen: (book: Books) => void;
+};
+
+export const BookCard = ({ book, onOpen }: BookCardType) => {
   const [imgError, setImgError] = useState(false);
   return (
     <div

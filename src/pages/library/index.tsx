@@ -5,16 +5,16 @@ import { PdfModal } from "../../components/PdfModal";
 import { BOOKS } from "../../utils/books";
 import { CHANNELS } from "../../utils/channels";
 import { useBook } from "../../contexts/bookContext";
+import { Books } from "../../types/book.type";
 
 export const LibraryPage = () => {
   const [activeDiscipline, setActiveDiscipline] = useState("Todas");
   const [search, setSearch] = useState("");
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState<Books[]>([]);
   const [loadingBooks, setLoadingBooks] = useState(true);
   const { openBook, setOpenBook } = useBook();
 
   useEffect(() => {
-    // simulate async loading (swap with real fetch if needed)
     const t = setTimeout(() => {
       setBooks(BOOKS);
       setLoadingBooks(false);
@@ -39,9 +39,9 @@ export const LibraryPage = () => {
     ...Array.from(new Set(books.flatMap((b) => b.disciplines))).sort(),
   ];
 
-  function mapDisciplineToSubjectKey(d) {
+  function mapDisciplineToSubjectKey(d: string) {
     if (!d) return null;
-    const normalize = (str) =>
+    const normalize = (str: string) =>
       String(str)
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
@@ -88,7 +88,7 @@ export const LibraryPage = () => {
         filteredBooks[0].disciplines[0],
       );
   }
-  const normalize = (str) =>
+  const normalize = (str: string) =>
     String(str)
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
