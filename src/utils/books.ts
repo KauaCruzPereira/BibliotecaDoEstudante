@@ -5,7 +5,7 @@ export const BOOKS = [
     pdfUrl:
       "https://www.epedagogia.com.br/materialbibliotecaonine/261A-falencia.pdf",
     imageUrl:
-      "https://m.media-amazon.com/images/I/816s8NUCBcL._AC_UF1000,1000_QL80_.jpg",
+      "https://covers.openlibrary.org/b/id/4250811-L.jpg",
     disciplines: ["Língua Portuguesa"],
   },
 
@@ -34,19 +34,9 @@ export const BOOKS = [
     authors: "Lima Barreto",
     pdfUrl: "https://www.ebooksbrasil.org/adobeebook/policarpoE.pdf",
     imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJsjsvGmcIXm7TV8gcvF04G5D1UQkRPSfwRA&s",
+      "https://covers.openlibrary.org/b/id/10653568-L.jpg",
     disciplines: ["Língua Portuguesa"],
   },
-
-  {
-    title: "Clara dos Anjos",
-    authors: "Lima Barreto",
-    pdfUrl: "http://www.culturatura.com.br/obras/Clara%20dos%20Anjos.pdf",
-    imageUrl:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiPKN6YvxjpBq1TbFasNJLTSZfh_4ZBVcpB7uryb_rxQyAjjW1EJRsuTI&s=10",
-    disciplines: ["Língua Portuguesa"],
-  },
-
   {
     title: "A Escrava Isaura",
     authors: "Bernardo Guimarães",
