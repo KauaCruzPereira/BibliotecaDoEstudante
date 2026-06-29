@@ -16,7 +16,7 @@ export const EssayPage = () => {
         display: "flex",
         gap: 20,
         flexDirection: isMobile ? "column" : "row",
-        alignItems: !isMobile ? "center" : null,
+        alignItems: !isMobile ? "center" : "none",
       }}
     >
       <EssayComponent />
