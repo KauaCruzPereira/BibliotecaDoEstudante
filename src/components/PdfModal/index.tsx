@@ -1,9 +1,15 @@
 import { ChevronLeftIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Books } from "../../types/book.type";
 
-export const PdfModal = ({ book, onClose }) => {
+type PdfModalType = {
+  book: Books;
+  onClose: () => void;
+};
+
+export const PdfModal = ({ book, onClose }: PdfModalType) => {
   useEffect(() => {
-    const fn = (e) => {
+    const fn = (e: any) => {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", fn);

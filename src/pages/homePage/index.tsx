@@ -2,11 +2,17 @@ import { FilePen, Hammer, LucideLightbulb, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useReveal } from "../../hooks/useReveal";
 
-export const HomePage = ({ setIsAiOpen }) => {
+type HomePageType = {
+  setIsAiOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+type NavigateProps = "library" | "solver" | "carbon" | "ai";
+
+export const HomePage = ({ setIsAiOpen }: HomePageType) => {
   const navigate = useNavigate();
   useReveal();
 
-  const handleNavigate = (target) => {
+  const handleNavigate = (target: NavigateProps) => {
     switch (target) {
       case "library":
         navigate("/library");

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { Question } from "../../types/activities.type";
 
 export const ActivitiesPage = () => {
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [loadingQuestions, setLoadingQuestions] = useState(false);
-  const [answers, setAnswers] = useState({});
-  const [results, setResults] = useState({});
+  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [results, setResults] = useState<Record<number, boolean>>({});
 
   async function loadQuestions() {
     try {
@@ -17,7 +18,7 @@ export const ActivitiesPage = () => {
       const data = await res.json();
 
       const questions = data.questions.filter(
-        (question) =>
+        (question: Question) =>
           question.language !== "espanhol" && question.language !== "ingles",
       );
 
@@ -38,7 +39,7 @@ export const ActivitiesPage = () => {
     loadQuestions();
   }, []);
 
-  function answerQuestion(questionId, correctAnswer) {
+  function answerQuestion(questionId: number, correctAnswer: string): void {
     const selected = answers[questionId];
 
     if (!selected) return;
@@ -49,7 +50,7 @@ export const ActivitiesPage = () => {
     }));
   }
 
-  const extractImages = (text) => {
+  const extractImages = (text: string): string[] => {
     if (!text) return [];
 
     const regex = /!\[\]\((.*?)\)/g;
@@ -58,7 +59,7 @@ export const ActivitiesPage = () => {
     return matches.map((m) => m[1]);
   };
 
-  const removeImagesFromText = (text) => {
+  const removeImagesFromText = (text: string): string => {
     if (!text) return "";
 
     return text.replace(/!\[\]\((.*?)\)/g, "");
@@ -183,7 +184,7 @@ export const ActivitiesPage = () => {
                       >
                         <input
                           type="radio"
-                          name={question.index}
+                          key={question.index}
                           value={alt.letter}
                           checked={answers[question.index] === alt.letter}
                           onChange={() => {

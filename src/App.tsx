@@ -2,16 +2,16 @@ import { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { AiChat } from "./components/AiChat";
 import { NavigationHeader } from "./components/Header";
-import { useBook } from "./contexts/bookContext";
 import { ActivitiesPage } from "./pages/activities";
 import { HomePage } from "./pages/homePage";
 import { LibraryPage } from "./pages/library";
 import { Footer } from "./components/Footer";
 import { EssayPage } from "./pages/essayPage";
+import { useBook } from "./contexts/bookContext";
 
 export default function App() {
   const { openBook } = useBook();
-  const [isAiOpen, setIsAiOpen] = useState(false);
+  const [isAiOpen, setIsAiOpen] = useState<boolean | null>(false);
 
   return (
     <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
@@ -36,7 +36,7 @@ export default function App() {
           </Routes>
 
           <AiChat
-            activePdfTitle={openBook?.title}
+            activePdfTitle={openBook?.title ?? ""}
             open={isAiOpen}
             setOpen={setIsAiOpen}
           />
