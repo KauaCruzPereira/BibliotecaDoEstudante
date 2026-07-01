@@ -11,9 +11,10 @@ export function ResultBox({ result }: ResultBoxProps) {
 
   return (
     <div
-      className={`w-full h-fit rounded-4xl border p-6 bg-white rounded-4xl shadow-sm
-        ${isOk ? "border-emerald-300 bg-white" : "border-red-300 bg-white"}
-      `}
+      className={`w-full h-fit rounded-4xl border p-6 bg-white shadow-sm
+      animate-[resultAppear_0.45s_cubic-bezier(0.22,1,0.36,1)]
+      ${isOk ? "border-emerald-300" : "border-red-300"}
+    `}
     >
       <span
         className={`

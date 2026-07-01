@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const EXTERNAL_URLS = {
-  solverequacoes: "https://solver-equacoes.vercel.app/",
   calculadoracarbono: "https://calculadora-carbono-cedup.vercel.app/",
 };
 
@@ -68,10 +67,10 @@ export const NavigationHeader = () => {
       isInternal: true,
     },
     {
-      id: "solverequacoes",
-      label: "SolverEquações",
-      to: EXTERNAL_URLS.solverequacoes,
-      isInternal: false,
+      id: "stepCalculator",
+      label: "Calculadora Passo a Passo",
+      to: "/step-calculator",
+      isInternal: true,
     },
     {
       id: "calculadoracarbono",

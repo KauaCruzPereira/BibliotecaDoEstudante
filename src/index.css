@@ -4,14 +4,13 @@
   --wine: #501c2f;
   --wine-dark: #34101e;
   --wine-soft: #7b2a48;
+  --wine-border: #7b2a4859;
+  --wine-muted: #501c2f0c;
   --beige: #f7f2ed;
   --cream: #fffaf4;
   --ink: #22252c;
   --muted: #60616b;
   --line: #d8cfc7;
-  --green: #3c8c73;
-  --gold: #d49a37;
-  --blue: #436b9d;
   --shadow: 0 18px 48px rgba(80, 28, 47, 0.14);
 }
 
@@ -32,7 +31,6 @@ body {
     sans-serif;
 }
 
-/* Scrollbar for filter strip */
 .filter-strip::-webkit-scrollbar {
   height: 4px;
 }
@@ -44,12 +42,10 @@ body {
   border-radius: 99px;
 }
 
-/* Chat textarea auto-resize helper */
 textarea {
   field-sizing: content;
 }
 
-/* Spinner for loading books */
 .spinner {
   width: 48px;
   height: 48px;
@@ -97,7 +93,6 @@ textarea {
   border-color: #cbd5e1;
 }
 
-/* Make channels stack in a single column on narrow viewports */
 @media (max-width: 600px) {
   .channels-list {
     grid-template-columns: 1fr;
@@ -608,7 +603,6 @@ summary:focus-visible {
   box-shadow: 0 10px 26px rgba(80, 28, 47, 0.06);
 }
 
-/* SUMMARY */
 .faq__item summary {
   position: relative;
   display: flex;
@@ -625,7 +619,6 @@ summary:focus-visible {
   display: none;
 }
 
-/* ICON */
 .faq__item summary::after {
   content: "+";
   position: absolute;
@@ -646,7 +639,6 @@ summary:focus-visible {
   transform: rotate(180deg);
 }
 
-/* ===== ANIMAÇÃO DO CONTEÚDO ===== */
 .faq__item p {
   margin: 0;
   padding: 0 22px;
@@ -665,9 +657,8 @@ summary:focus-visible {
     padding 300ms ease;
 }
 
-/* quando abrir */
 .faq__item[open] p {
-  max-height: 200px; /* suficiente para texto comum */
+  max-height: 200px;
   opacity: 1;
   transform: translateY(0);
   padding: 0 22px 22px;
@@ -768,7 +759,6 @@ summary:focus-visible {
   overflow: hidden;
 }
 
-/* brilho moderno */
 .footer::before {
   content: "";
   position: absolute;
@@ -791,7 +781,6 @@ summary:focus-visible {
   gap: 25px;
 }
 
-/* BRAND */
 .footer__brand {
   display: flex;
   flex-direction: column;
@@ -800,7 +789,6 @@ summary:focus-visible {
   gap: 14px;
 }
 
-/* LOGO */
 .footer__logo img {
   width: 78px;
   height: 78px;
@@ -810,7 +798,6 @@ summary:focus-visible {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* TEXTO */
 .footer__text strong {
   color: #fff;
   font-size: 1.2rem;
@@ -823,7 +810,6 @@ summary:focus-visible {
   line-height: 1.4;
 }
 
-/* INSTAGRAM BUTTON */
 .footer__instagram {
   background: linear-gradient(45deg, #ff4d6d, #c026d3);
   border: none;
@@ -846,7 +832,6 @@ summary:focus-visible {
   filter: brightness(1.1);
 }
 
-/* COPY */
 .footer__copy {
   margin-top: 40px;
   padding-top: 18px;
@@ -976,5 +961,22 @@ summary:focus-visible {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes resultAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
