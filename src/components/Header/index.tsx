@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const EXTERNAL_URLS = {
-  calculadoracarbono: "https://calculadora-carbono-cedup.vercel.app/",
-};
-
 const LOGO_SRC = "/203logo.png";
 
 export const NavigationHeader = () => {
@@ -36,7 +32,7 @@ export const NavigationHeader = () => {
       return;
     }
 
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsMenuOpen(false);
       }
@@ -52,31 +48,27 @@ export const NavigationHeader = () => {
   const isMobile = windowWidth < 768;
 
   const navItems = [
-    { id: "homepage", label: "Início", to: "/", isInternal: true },
-    { id: "library", label: "Biblioteca", to: "/library", isInternal: true },
+    { id: "homepage", label: "Início", to: "/" },
+    { id: "library", label: "Biblioteca", to: "/library" },
     {
       id: "activities",
       label: "Simulados",
       to: "/activities",
-      isInternal: true,
     },
     {
       id: "essay",
       label: "Redação",
       to: "/essay",
-      isInternal: true,
     },
     {
       id: "stepCalculator",
       label: "Calculadora Passo a Passo",
       to: "/step-calculator",
-      isInternal: true,
     },
     {
       id: "calculadoracarbono",
-      label: "CalculadoraCarbono",
-      to: EXTERNAL_URLS.calculadoracarbono,
-      isInternal: false,
+      label: "Calculadora de Carbono",
+      to: "/carbon-calculator",
     },
   ];
 
@@ -84,11 +76,6 @@ export const NavigationHeader = () => {
     if (isMobile) {
       setIsMenuOpen(false);
     }
-  };
-
-  const handleExternalNavigation = (to) => {
-    closeMobileMenu();
-    window.location.href = to;
   };
 
   return (
@@ -119,41 +106,26 @@ export const NavigationHeader = () => {
         }`}
         aria-label="Navegação principal"
       >
-        {navItems.map(({ id, label, to, isInternal }) => {
+        {navItems.map(({ id, label, to }) => {
           const displayLabel = isMobile
             ? label.replace(/([a-záéíóúãõç])([A-Z])/g, "$1\n$2")
             : label;
 
-          if (isInternal) {
-            return (
-              <NavLink
-                key={id}
-                to={to}
-                className={({ isActive }) =>
-                  `nav-button ${isMobile ? "mobile" : ""} ${
-                    isActive ? "active" : ""
-                  }`
-                }
-                onClick={closeMobileMenu}
-              >
-                <span className={`nav-button-text ${isMobile ? "mobile" : ""}`}>
-                  {displayLabel}
-                </span>
-              </NavLink>
-            );
-          }
-
           return (
-            <button
+            <NavLink
               key={id}
-              type="button"
-              className={`nav-button ${isMobile ? "mobile" : ""}`}
-              onClick={() => handleExternalNavigation(to)}
+              to={to}
+              className={({ isActive }) =>
+                `nav-button ${isMobile ? "mobile" : ""} ${
+                  isActive ? "active" : ""
+                }`
+              }
+              onClick={closeMobileMenu}
             >
               <span className={`nav-button-text ${isMobile ? "mobile" : ""}`}>
                 {displayLabel}
               </span>
-            </button>
+            </NavLink>
           );
         })}
       </nav>
