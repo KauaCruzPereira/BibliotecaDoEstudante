@@ -19,13 +19,15 @@ export default function App() {
       <div
         style={{
           minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
           background: "linear-gradient(180deg, #F7F1EB, #EFE5DC, #E6D8CC)",
           fontFamily: "Inter, system-ui, sans-serif",
         }}
       >
         <NavigationHeader />
 
-        <main>
+        <main style={{ flex: 1}}>
           <Routes>
             <Route
               path="/"
