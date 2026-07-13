@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CalculatorSelector } from "../../components/CalculatorSelector";
+import { CalculatorSelector } from "../../components/TabSelector";
 import { BasicCalculator } from "../../components/CalculatorSteps/BasicCalculator";
 import { FirstDegreeCalculator } from "../../components/CalculatorSteps/FirstDegreeCalculator";
 import { ResultBox } from "../../components/Results/Box";
@@ -18,6 +18,18 @@ export const StepCalculator = () => {
   const [calculatorType, setCalculatorType] =
     useState<CalculatorTypes>("basica");
   const [result, setResult] = useState<SolverResult | null>(null);
+
+  const TAB_LABELS: { id: CalculatorTypes; label: string }[] = [
+    { id: "basica", label: "Calculadora" },
+    { id: "primeiroG", label: "1º Grau" },
+    { id: "segundoG", label: "2º Grau" },
+    { id: "sistemas", label: "Sistemas" },
+    { id: "pa", label: "PA" },
+    { id: "pg", label: "PG" },
+    { id: "exponencial", label: "Exponencial" },
+    { id: "porcentagem", label: "Porcentagem" },
+    { id: "regra3", label: "Regra de 3" },
+  ];
 
   const handleSetCalculatorType = (type: CalculatorTypes) => {
     setCalculatorType(type);
@@ -45,6 +57,7 @@ export const StepCalculator = () => {
       <CalculatorSelector
         active={calculatorType}
         onChange={handleSetCalculatorType}
+        labels={TAB_LABELS}
       />
 
       <div className="flex flex-col lg:flex-row gap-6 w-full">

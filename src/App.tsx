@@ -4,11 +4,11 @@ import { AiChat } from "./components/AiChat";
 import { NavigationHeader } from "./components/Header";
 import { ActivitiesPage } from "./pages/activities";
 import { HomePage } from "./pages/homePage";
-import { LibraryPage } from "./pages/library";
 import { Footer } from "./components/Footer";
 import { EssayPage } from "./pages/essayPage";
 import { useBook } from "./contexts/bookContext";
-import { StepCalculator } from "./pages/stepCalculator";
+import { StepCalculator } from "./pages/stepCalculatorPage";
+import { LibraryPage } from "./pages/libraryPage";
 
 export default function App() {
   const { openBook } = useBook();
@@ -27,7 +27,7 @@ export default function App() {
       >
         <NavigationHeader />
 
-        <main style={{ flex: 1}}>
+        <main style={{ flex: 1 }}>
           <Routes>
             <Route
               path="/"
