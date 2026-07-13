@@ -19,11 +19,7 @@ export const HomePage = ({ setIsAiOpen }: HomePageType) => {
         break;
 
       case "solver":
-        window.location.href = "https://solver-equacoes.vercel.app";
-        break;
-
-      case "carbon":
-        window.location.href = "https://calculadora-carbono-cedup.vercel.app/";
+        navigate("/step-calculator");
         break;
 
       case "ai":
@@ -88,7 +84,6 @@ export const HomePage = ({ setIsAiOpen }: HomePageType) => {
                 </p>
               </div>
             </article>
-
             <article className="timeline__item reveal">
               <div className="item" onClick={() => handleNavigate("solver")}>
                 <div className="timeline__number" aria-hidden="true">
@@ -97,34 +92,17 @@ export const HomePage = ({ setIsAiOpen }: HomePageType) => {
                 <div className="timeline__icon" aria-hidden="true">
                   <img src="/calculator.png" alt="" />
                 </div>
-                <h3>Solver Equações</h3>
+                <h3>Calculadora Passo a Passo</h3>
                 <p>
                   Resolva equações matemáticas passo a passo e compreenda cada
                   etapa da resolução para aprender de forma prática.
                 </p>
               </div>
             </article>
-
-            <article className="timeline__item reveal">
-              <div className="item" onClick={() => handleNavigate("carbon")}>
-                <div className="timeline__number" aria-hidden="true">
-                  3
-                </div>
-                <div className="timeline__icon" aria-hidden="true">
-                  <img src="/carbonFootprint.png" alt="" />
-                </div>
-                <h3>Calculadora de Carbono</h3>
-                <p>
-                  Utilize nossa calculadora para entender seu impacto ambiental
-                  e desenvolver consciência sustentável através da tecnologia.
-                </p>
-              </div>
-            </article>
-
             <article className="timeline__item reveal">
               <div className="item" onClick={() => setIsAiOpen(true)}>
                 <div className="timeline__number" aria-hidden="true">
-                  4
+                  3
                 </div>
                 <div className="timeline__icon" aria-hidden="true">
                   <img src="/ai.png" alt="" />

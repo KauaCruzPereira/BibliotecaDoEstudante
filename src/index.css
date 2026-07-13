@@ -510,7 +510,7 @@ summary:focus-visible {
 .timeline {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   margin-top: clamp(58px, 7vw, 92px);
 }
@@ -518,9 +518,9 @@ summary:focus-visible {
 .timeline::before {
   content: "";
   position: absolute;
-  top: 31px;
-  left: 12.5%;
-  right: 12.5%;
+  top: 30px;
+  left: 15%;
+  right: 15%;
   height: 2px;
   background: var(--line);
 }

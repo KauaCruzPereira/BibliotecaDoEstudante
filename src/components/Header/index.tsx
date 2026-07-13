@@ -65,11 +65,6 @@ export const NavigationHeader = () => {
       label: "Calculadora Passo a Passo",
       to: "/step-calculator",
     },
-    {
-      id: "calculadoracarbono",
-      label: "Calculadora de Carbono",
-      to: "/carbon-calculator",
-    },
   ];
 
   const closeMobileMenu = () => {
